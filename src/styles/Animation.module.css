@@ -33,7 +33,8 @@
 }
 
 .revert {
-    transform: rotate(-90deg) translateX(0px) scaleX(2.5) translateY(-112px);
+    /* -112px */
+    transform: rotate(-90deg) translateX(0px) scaleX(2.5) translateY(-1.47vw);
 }
 
 @keyframes scaleAnim {

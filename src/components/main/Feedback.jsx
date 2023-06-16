@@ -21,7 +21,7 @@ export const Feedback = ({feedback}) => {
     
 
   return (
-    <div id='fbCont'>
+    <div id='fbCont' style={{position: 'relative'}}>
         <div className={styles.feegbackImgCont}>
             <div className={styles.feedbackImgWrap}>
                 <div className={styles.feedbackImg}></div>

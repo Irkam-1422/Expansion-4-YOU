@@ -29,7 +29,7 @@
     font-weight: 100;
     /* transition: all 10s; */
     background: linear-gradient(45deg, transparent, transparent, #e6942378 , transparent, transparent, transparent);
-    padding: 12px;
+    padding: .93vw;
     position: relative;
     background-position-x: -2000px;
     box-shadow: 0px 0px 10px 1px;
@@ -41,8 +41,8 @@
 .text {
     /* color: black; */
     color: transparent;
-    font-size: 18px;
-    padding: 2px 10px;
+    font-size: 1.4vw;
+    padding: .15vw .78vw;
     opacity: 0;
     /* background: yellow; */
 }
@@ -51,7 +51,7 @@
     padding-top: 25vh;
     padding-bottom: 15vh;
     background: black;
-    max-height: 400px;
+    max-height: 31.25vw;
     margin-top: 80vh;
 }
 
@@ -74,7 +74,7 @@
     font-size: 3rem;
     width: fit-content;
     padding: 0 5vw;
-    margin-top: 3px;
+    margin-top: .24vw;
     margin-left: 7vw;
     transition: all 1s;
     color: black;
@@ -86,7 +86,7 @@
     font-weight: 100;
     font-size: 1.5rem;
     text-align: initial;
-    padding-left: 50px;
+    padding-left: 3.9vw;
     transition: all 1s;
 }
 
@@ -95,11 +95,11 @@
     transform: none;
     background: #dcd2b7;
     position: relative;
-    width: 400px;
-    height: 650px;
+    width: 31.25vw;
+    height: 50.8vw;
     left: 56vw;
     margin: 0;
-    height: 104px;
+    height: 8.125vw;
 }
 
 .stop {
@@ -109,14 +109,14 @@
     transform: scaleX(2.5);
     transform: scale(2.5); */
     transition: all 1s;
-    margin: 15px;
+    margin: 1.2vw;
     font-weight: 400;
     text-align: center;
     font-size: 1.8rem;
     position: relative;
-    top: -26px;
+    top: -2vw;
     width: fit-content;
-    left: 118px;
+    left: 9.2vw;
 }
 
 .remark {
@@ -124,8 +124,8 @@
     font-size: 1.3rem;
     font-weight: 100;
     position: relative;
-    top: -13px;
-    left: 50px;
+    top: -1vw;
+    left: 3.9vw;
     color: black;
 }
 
@@ -157,9 +157,9 @@
     text-align: end;
     font-size: 1.5rem;
     font-weight: 100;
-    width: 400px;
+    width: 31.25vw;
     height: 200vh;
-    left: 543px;
+    left: 42.4vw;
     top: -27vh;
     z-index: -1;
     display: flex;
@@ -167,7 +167,7 @@
     align-items: center;
     padding-top: 25vh; 
     left: 49vw;
-    top: -220px;
+    top: -17.2vw;
     z-index: 2;
 }
 .span1 {
@@ -177,25 +177,25 @@
     color: aliceblue;
     position: relative;
     font-weight: 400;
-    top: -35px;
-    margin-top: 27px;
-    left: -60px; 
-    margin-bottom: -33px;
+    top: -2.7vw;
+    margin-top: 2.1vw;
+    left: -4.7vw; 
+    margin-bottom: -2.6vw;
 }
 .span2 {
     font-size: 2.5rem;
     position: relative;
     font-weight: 400;
-    top: -56px;
-    margin-top: 27px;
-    left: -12px;
-    margin-bottom: -46px;
+    top: -4.375vw;
+    margin-top: 2.1vw;
+    left: -0.94vw;
+    margin-bottom: -3.6vw;
     text-transform: uppercase;
     color: #85a3a9;
 }
 .span3 {
     position: relative;
-    left: 50px; 
+    left: 3.9vw; 
 }
 
 .revert {
@@ -213,7 +213,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    top: -100px;
+    top: -7.8vw;
 }
 
 .imgCont {
@@ -223,21 +223,21 @@
 }
 
 .img {
-    width: 280px;
-    height: 315px;
+    width: 21.8vw;
+    height: 24.6vw;
 }
 
 .aboutText {
     font-size: 1.2rem;
     background: #caaa7e;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 1.6vw;
     font-weight: 100;
-    width: 400px;
+    width: 31.25vw;
     height: fit-content;
     position: relative;
     top: 13vh;
-    left: -13px;
+    left: -1vw;
 }
 
 .aboutText::before {
@@ -248,9 +248,9 @@
     transform: scaleX(2.5);
     position: absolute;
     text-align: left;
-    left: 39px;
-    width: 81px;
-    margin-top: -93px;
+    left: 3vw;
+    width: 6.3vw;
+    margin-top: -7.3vw;
     opacity: .8;
 }
 
@@ -259,24 +259,24 @@
     background: black;
     color: #f8f8f8;
     position: absolute;
-    padding: 30px;
+    padding: 2.35vw;
     padding-top: 7vh;
-    right: -48px;
+    right: -3.75vw;
     height: 76.5vh;
-    width: 300px;
+    width: 23.4vw;
     font-weight: 100;
-    margin-top: -13px;
-    right: -75px;
+    margin-top: -1vw;
+    right: -5.85vw;
     padding-right: 8vw;
     text-align: initial;
-    margin-top: -95px;
+    margin-top: -7.4vw;
 }
 
 .simpleTitle {
     position: relative;
     width: 84%;
     left: -22vw;
-    margin-bottom: 11px;
+    margin-bottom: 0.86vw;
     transform: none;
 }
 
@@ -296,7 +296,7 @@
 
 .servicesCont {
     background: #000;
-    margin-top: -1400px;
+    margin-top: -109.3vw;
     padding-top: 8vh; 
 }
 
@@ -310,14 +310,14 @@
     display: flex; 
     justify-content: space-around;
     position: relative;
-    margin-top: 50px;
-    padding-bottom: 50px;
+    margin-top: 3.9vw;
+    padding-bottom: 3.9vw;
 }
 
 .serviceWrap {
     overflow: hidden;
     transition: all 1s;
-    max-width: 350px;
+    max-width: 27.3vw;
 }
 
 .serviceHidden {
@@ -328,13 +328,13 @@
 }
 
 .imgService {
-    width: 350px;
+    width: 27.3vw;
 }
 
 .servicesText {
     position: relative;
     font-size: 1.5rem;
-    width: 129px;
+    width: 10vw;
     color: #85a3a9;
     transform: scaleX(1.5);
     z-index: 1;
@@ -397,8 +397,8 @@
     width: fit-content;
     text-align: center;
     font-size: 2rem;
-    padding: 15px;
-    border: 2px solid #caaa7e;
+    padding: 1.17vw;
+    border: 0.16vw solid #caaa7e;
 }
 
 .followers::before {
@@ -410,7 +410,7 @@
     text-transform: uppercase;
     transform: scaleX(1.5);
     color: #caaa7e;
-    width: 50px;
+    width: 3.9vw;
     text-align: end;
     z-index: 8;
 } 
@@ -433,22 +433,22 @@
 }
 
 .smaComment {
-    margin-left: 550px;
+    margin-left: 42.96vw;
 }
 
 .smaTitle1 {
-    margin-top: 40px;
-    margin-left: -200px;
-    margin-bottom: 10px;
+    margin-top: 3.125vw;
+    margin-left: -15.6vw;
+    margin-bottom: 0.78vw;
 }
 
 .smaTitle2 {
-    margin-left: -150px; 
+    margin-left: -11.7vw; 
 }
 
 .vidCont {
-    padding-bottom: 100px;
-    padding-right: 100px;
+    padding-bottom: 7.8vw;
+    padding-right: 7.8vw;
     width: 101vw;
     background: black;
     box-sizing: border-box;
@@ -459,16 +459,16 @@
 
 .vidWrap {
     overflow: hidden;
-    height: 615px;
-    border-radius: 20px;
-    width: 350px;
+    height: 46vw;
+    border-radius: 1.6vw;
+    width: 27.3vw;
     position: relative;
-    top: -44px; 
+    top: -3.4; 
 }
 
 .smaVideo {
-    width: 350px;
-    margin-top: -38px;
+    width: 26.3vw;
+    margin-top: -3vw;
 }
 
 .vidTextCont {
@@ -476,14 +476,14 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding-top: 100px;
+    padding-top: 7.8vw;
 }
 .vidText {
     font-size: 2rem;
     font-weight: 100;
     text-align: initial;
     position: relative;
-    left: -38px;
+    left: -3vw;
 }
 
 .seoCont {
@@ -501,8 +501,8 @@
 }
 
 .seoVidCont {
-    margin: 45px;
-    margin-bottom: 20px;
+    margin: 3.5vw;
+    margin-bottom: 1.6vw;
 }
 
 .seoVidCont::after {
@@ -516,7 +516,7 @@
 }
 
 .seoVideo {
-    width: 500px;
+    width: 39vw;
 }
 
 .well {
@@ -530,7 +530,7 @@
 .seoNote {
     text-transform: uppercase;
     transform: scaleX(1.5);
-    width: 150px;
+    width: 11.7vw;
     text-align: end;
     color: #caaa7e;
     position: relative;
@@ -549,12 +549,12 @@
 .seoText2 {
     font-size: 1.7rem;
     font-weight: 100;
-    margin-top: 30px;
+    margin-top: 2.34vw;
     text-align: initial;
     padding-left: 46vw;
     margin-left: -20vw;
     background: #000000;
-    padding-bottom: 116px;
+    padding-bottom: 9.06vw;
     padding-left: 30vw;
 }
 
@@ -598,12 +598,12 @@
     text-align: center;
     position: relative;
     left: -6vw;
-    margin-top: 50px;
+    margin-top: 3.9vw;
 }
 .seaText2 {
     font-size: 1.33rem;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 7.8vw;
     position: relative;
     left: 14.5vw;
 }
@@ -637,7 +637,7 @@
     padding: 12vh 0;
 }
 .seaLastText {
-    width: 300px;
+    width: 23.4vw;
     left: 14vw;
 }
 
@@ -652,17 +652,17 @@
 
 .feedbackImgWrap {
     overflow: hidden;
-    height: 701px; 
+    height: 54.7vw; 
 }
 
 .feedbackImg {
     background-image: url('../assets/feedback1.png');
-    width: 150px;
+    width: 11.7vw;
     background-repeat: repeat;
     transition: all 12s;
     transition-timing-function: linear;
     /* margin-top: -1299px; */
-    height: 2000px;
+    height: 156.25vw;
     background-size: contain;
     animation: logosSpin_1 25s;
     animation-iteration-count: infinite;
@@ -679,18 +679,18 @@
 .feedbackTitles {
     padding-top: 5vh;
     background: rgb(0, 0, 0);
-    padding-bottom: 18px;
+    padding-bottom: 1.4vw;
     transition: all 1s; 
     position: absolute;
     width: 100%;
     height: 200%;
-    margin-top: -192px;
+    margin-top: -15vw;
     z-index: 3;
 }
 
 .feedback {
     font-weight: 100;
-    width: 350px;
+    width: 27.34vw;
     color: rgb(0,0,0);
     text-align: initial;
     font-size: 1.5rem;
@@ -737,8 +737,8 @@
 }
 
 .feedbackTextCont {
-    margin-top: 165px;
-    padding-top: 30px;
+    margin-top: 12.9vw;
+    padding-top: 2.34vw;
 }
 
 @keyframes fadeIn {
