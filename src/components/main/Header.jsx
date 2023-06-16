@@ -109,7 +109,7 @@ export const Header = ({returnReverted, returnFeedback}) => {
   return (
     <div>
         <video src={require('../../assets/video.mp4')}
-               type="video/mp4" 
+               muted 
                autoPlay="autoplay"   
                loop="loop"
                className={styles.video}> 
