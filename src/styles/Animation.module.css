@@ -1,0 +1,43 @@
+.hiddenOp {
+    opacity: 0
+}
+
+.hiddenLeft {
+    opacity: 0;
+    transform: translateX(-50%);
+}
+
+.hiddenRight {
+    opacity: 0;
+    transform: translateX(50%);
+}
+
+.hiddenTop {
+    opacity: 0;
+    transform: translateY(-2000px);
+}
+
+.hiddenBottom {
+    opacity: 0;
+    transform: translateY(2000px);
+}
+
+.hiddenGrow {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.stop {
+    animation: scaleAnim 2s;
+    animation-iteration-count: infinite;
+}
+
+.revert {
+    transform: rotate(-90deg) translateX(0px) scaleX(2.5) translateY(-112px);
+}
+
+@keyframes scaleAnim {
+    0% {transform: scaleX(2.5);}
+    50% {transform: scale(2.5);}
+    100% {transform: scaleX(2.5);}
+}

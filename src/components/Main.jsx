@@ -10,38 +10,40 @@ import { Feedback } from './main/Feedback';
 export const Main = () => {
 
   const fadeInAnime = useRef(null); 
+  const [reverted,setReverted] = useState(false)
+  const [feedback,setFeedback] = useState(false)
 
-  useEffect(() => {
-      fadeInAnime.current = anime.timeline({
-        loop: false,
-        autoplay: true,
-        easing: "easeInOutQuad",
-        duration: 1800,
-      })
+  // useEffect(() => {
+  //     fadeInAnime.current = anime.timeline({
+  //       loop: false,
+  //       autoplay: true,
+  //       easing: "easeInOutQuad",
+  //       duration: 1800,
+  //     })
 
-      fadeInAnime.current.add({
-        targets: `.title`,
-        opacity: `100%`
-      })
-      fadeInAnime.current.add({
-        targets: `.text`,
-        opacity: `100%`,
-        keyframes: [
-          {backgroundColor: 'rgba(255, 255, 255, 0)', color: '#FFF'},
-          {backgroundColor: 'rgba(255, 255, 0, 1)', color: '#000000'},
-          //{backgroundColor: 'rgba(255, 255, 255, 0)', color: '#FFF'},
-        ]
-      })
+  //     fadeInAnime.current.add({
+  //       targets: `.title`,
+  //       opacity: `100%`
+  //     })
+  //     fadeInAnime.current.add({
+  //       targets: `.text`,
+  //       opacity: `100%`,
+  //       keyframes: [
+  //         {backgroundColor: 'rgba(255, 255, 255, 0)', color: '#FFF'},
+  //         {backgroundColor: 'rgba(255, 255, 0, 1)', color: '#000000'},
+  //         //{backgroundColor: 'rgba(255, 255, 255, 0)', color: '#FFF'},
+  //       ]
+  //     })
 
-  },[])
+  // },[])
 
   return (
     <div id='Home'>
-        <Header/>
+        <Header returnReverted={(cond) => setReverted(cond)} returnFeedback={(cond) => setFeedback(cond)}/> 
         <Overview/>
-        <Welcoming/>
+        <Welcoming reverted={reverted}/>
         <Services/> 
-        <Feedback/>
+        <Feedback feedback={feedback}/>
     </div>
   ) 
 }

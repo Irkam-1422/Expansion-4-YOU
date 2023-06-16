@@ -7,12 +7,15 @@
 }
 
 .header {
-    z-index: 1;
+    z-index: -1;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 60vh;
+    position: fixed;
+    top: 0px;
+    left: 40vw;
+    height: 70vh;
 }
 
 .title {
@@ -49,7 +52,7 @@
     padding-bottom: 15vh;
     background: black;
     max-height: 400px;
-    margin-top: 25vh;
+    margin-top: 80vh;
 }
 
 .title1 {
@@ -102,9 +105,9 @@
 .stop {
     color: red;
     color:  #85a3a9;
-    transform: scaleY(2.5);
+    /* transform: scaleY(2.5);
     transform: scaleX(2.5);
-    transform: scale(2.5);
+    transform: scale(2.5); */
     transition: all 1s;
     margin: 15px;
     font-weight: 400;
@@ -163,6 +166,9 @@
     flex-direction: column;
     align-items: center;
     padding-top: 25vh; 
+    left: 49vw;
+    top: -220px;
+    z-index: 2;
 }
 .span1 {
     text-transform: uppercase;
@@ -206,6 +212,8 @@
     transform: none;
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: -100px;
 }
 
 .imgCont {
@@ -258,6 +266,10 @@
     width: 300px;
     font-weight: 100;
     margin-top: -13px;
+    right: -75px;
+    padding-right: 8vw;
+    text-align: initial;
+    margin-top: -95px;
 }
 
 .simpleTitle {
@@ -284,7 +296,7 @@
 
 .servicesCont {
     background: #000;
-    margin-top: -143vh;
+    margin-top: -1400px;
     padding-top: 8vh; 
 }
 
@@ -300,6 +312,19 @@
     position: relative;
     margin-top: 50px;
     padding-bottom: 50px;
+}
+
+.serviceWrap {
+    overflow: hidden;
+    transition: all 1s;
+    max-width: 350px;
+}
+
+.serviceHidden {
+    max-width: 0px;
+    overflow: hidden;
+    position: relative;
+    transition: all 1s;
 }
 
 .imgService {
@@ -349,7 +374,7 @@
     z-index: 2;
     margin-left: -3vw;
     padding-right: 10vw;
-    width: 69vw;
+    width: 73vw;
 }
 
 .smaBig1 {
@@ -394,8 +419,8 @@
     content: 'Г';
     position: absolute;
     color: #000;
-    margin-top: -8.8vh;
-    margin-left: -10.65vw;
+    margin-top: -6.9vh;
+    margin-left: -8.65vw;
     font-size: 1.9rem;
     transform: scaleX(2.6) scaleY(2.4);
 } 
@@ -408,7 +433,7 @@
 }
 
 .smaComment {
-    margin-left: 500px;
+    margin-left: 550px;
 }
 
 .smaTitle1 {
@@ -424,10 +449,10 @@
 .vidCont {
     padding-bottom: 100px;
     padding-right: 100px;
-    width: 100vw;
+    width: 101vw;
     background: black;
     box-sizing: border-box;
-    margin-left: -19.3vw;
+    margin-left: -17.3vw;
     display: flex;
     justify-content: flex-end;
 }
@@ -530,6 +555,7 @@
     margin-left: -20vw;
     background: #000000;
     padding-bottom: 116px;
+    padding-left: 30vw;
 }
 
 .titleSmall {
@@ -555,7 +581,7 @@
 }
 
 .seaCont {
-    margin-left: -33vw;
+    margin-left: -51vw;
     width: 83vw;
     padding-left: 5vw;
     box-sizing: border-box;
@@ -606,7 +632,7 @@
 }
 .seaLastCont {
     background: black;
-    width: 100vw;
+    width: 103vw;
     margin-left: -5.8vw;
     padding: 12vh 0;
 }
@@ -652,9 +678,14 @@
 
 .feedbackTitles {
     padding-top: 5vh;
-    background: black;
+    background: rgb(0, 0, 0);
     padding-bottom: 18px;
     transition: all 1s; 
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    margin-top: -192px;
+    z-index: 3;
 }
 
 .feedback {
@@ -678,14 +709,14 @@
     position: absolute;
     color: #85a3a9;
     transform: scaleX(4.5) scaleY(9.5);
-    margin-top: 16vh;
+    margin-top: 13vh;
     margin-left: -1vw;
 }
 
 .author1 {
     position: relative;
     left: 14vw;
-    top: 2vw;
+    top: 3vw;
     font-size: 2rem;
     margin-top: -5vh;
 }
@@ -696,13 +727,18 @@
     color: #caaa7e;
     transform: scaleX(12.5) scaleY(5.5) rotate(90deg);
     margin-top: -2vh;
-    margin-left: 9vw;
+    margin-left: 7vw;
 }
 
 .author2 {
     position: relative;
     font-size: 2rem;
     top: -1vh;
+}
+
+.feedbackTextCont {
+    margin-top: 165px;
+    padding-top: 30px;
 }
 
 @keyframes fadeIn {

@@ -1,14 +1,15 @@
 import React from 'react'
 import styles from '../../styles/Main.module.css'
+import animStyles from '../../styles/Animation.module.css'
 
 export const SMA = () => {
   return (
     <div className={styles.smaCont}>
         <div className="">
             <div style={{textAlign: 'end'}}>
-                <div className={styles.smaBig1}>What is your desired number of followers on Facebook? </div>
-                <div className={styles.smaBig2}>And what about Instagram? </div>
-                <div className={styles.smaBig3}>Or maybe LinkedIn? </div>
+                <div className={`${styles.smaBig1} {animStyles.hiddenLeft}`}>What is your desired number of followers on Facebook? </div>
+                <div className={`${styles.smaBig2} {animStyles.hiddenLeft}`}>And what about Instagram? </div>
+                <div className={`${styles.smaBig3} {animStyles.hiddenLeft}`}>Or maybe LinkedIn? </div>
 
                 <div className={styles.followers}>
                     2000 <br />
