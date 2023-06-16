@@ -1,0 +1,31 @@
+.menu {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 4vh;
+    padding: 4vh 4vw;
+    padding-left: 42vw;
+    box-sizing: border-box;
+    font-size: 19px;
+    position: sticky;
+    top: 0;
+    background: #dcd2b7;
+    padding: 0;
+    z-index: 1000;
+}
+
+.navBtn {
+    text-transform: uppercase;
+    padding: 7px 17px;
+    /* transition: all 1s; */
+    cursor: pointer;
+    color: transparent;
+}
+
+/* .navBtn:hover {
+    background: red;
+} */
+
+.on {
+    background: red;
+    color: white;
+}
