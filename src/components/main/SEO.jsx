@@ -10,7 +10,7 @@ export const SEO = () => {
                 whose websites are coming up first when you are typing 
             </div>
             <div className={styles.seoVidCont}>
-                <video className={styles.seoVideo} src={require('../../assets/SEO.mp4')} muted ></video>
+                <video className={styles.seoVideo} src={require('../../assets/SEO.MP4')} muted ></video>
             </div>
             <div className={styles.seoText1}>
                 in your google search? 
