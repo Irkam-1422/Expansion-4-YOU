@@ -32,14 +32,23 @@ export const Welcoming = ({reverted}) => {
   return (
     <>
     <div className={styles.welcomingCont} id='revert'>
+        {/* transform: rotate(-90deg) translateX(-55vh) scaleX(2.5) translateY(-12.47vw); */}
         <div className={`${styles.title1} ${animStyles.hiddenLeft}`} ref={title1}>Well...</div>
+        {/*     position: relative;
+    left: -6vw; */}
         <div className={`${styles.title2} ${animStyles.hiddenLeft}`} ref={title2}>If you didn't stop now...</div>
+        {/*     position: relative;
+    left: -11vw; */}
         <div className={`${styles.text2Cont}`} ref={text1}>
+            {/* font-weight: 400;
+    font-size: 1.9rem; */}
             We guess, <br />  
             you are brave enough <br />
             to dive into <br /> 
             <span style={{transition: 'all 2s'}} className={`${styles.span1} ${animStyles.hiddenGrow}`} ref={digital}>Digital</span>
             <span style={{transition: 'all 2s'}} className={`${styles.span2} ${animStyles.hiddenGrow}`} ref={marketing}>Marketing</span> 
+            {/* color: #642066;
+    font-size: 3.5rem; */}
             <span className={`${styles.span3}`} ref={text2}>content!</span>
 
             {/* <div className={styles.revert}>
