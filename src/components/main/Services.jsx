@@ -143,7 +143,7 @@ const handleSeaBack = () => {
 }
 
   return (
-    <div className={styles.servicesCont}>
+    <div className={styles.servicesCont} id='services'>
       <div className="">
         <div className={`${styles.title1} {styles.titleServices}`} ref={title} >Wanna know more about what we do?</div>
       </div>
@@ -153,22 +153,11 @@ const handleSeaBack = () => {
           <img className={styles.imgService} src={require('../../assets/SMA.jpg')} alt="" />
         </div>
           <div className={`${styles.servicesText} ${styles.sma}`} ref={smaText}>
-            {/* width: 17vw;
-    z-index: 1;
-    background: transparent;
-    color: rgb(254, 254, 254);
-    padding: 0px; */}
             SOCIAL MEDIA STRATEGY & ADVERTISING 
             <span className={styles.notePink} style={{opacity: 0}} ref={smaAll} onClick={handleSmaBak}> <br /> ALL SERVICES</span> 
           </div>
         </div> 
         <div className={styles.serviceHidden} ref={smaHidden}>
-          {/* overflow: hidden;
-    max-width: 0px;
-    background: rgb(100, 32, 103);
-    width: 100vw;
-    height: 120vh;
-    margin-top: -10vh; */}
          <SMA/> 
         </div>
         <div className={styles.serviceHidden} ref={seoHidden}>
@@ -180,8 +169,6 @@ const handleSeaBack = () => {
         <div className={styles.middleDiv} ref={seo} style={{transition: 'all 1s'}}>
           <div className={styles.serviceWrap} ref={seoWrap} onClick={handleSeoClick}>
             <img className={styles.imgService} src={require('../../assets/SEO.jpg')} alt="" />
-            {/*     width: 27.3vw;
-    border: 7px solid #642067; */}
           </div>
           <div className={`${styles.servicesText} ${styles.seo}`} ref={seoText}>
             SEARCH ENGINE OTIMIZATION

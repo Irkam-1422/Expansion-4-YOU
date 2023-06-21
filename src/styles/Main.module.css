@@ -1,8 +1,8 @@
 .video {
-    width: 100vw;
+    height: 117vh;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: -10.4vh;
+    left: -27vw;
     z-index: -1;
 }
 
@@ -15,7 +15,7 @@
     position: fixed;
     top: 0px;
     left: 40vw;
-    height: 70vh;
+    height: 85vh;
 }
 
 .title {
@@ -25,10 +25,6 @@
     font-size: 3rem;
     margin-bottom: 0;
     opacity: 0;
-
-    font-weight: 100;
-    /* transition: all 10s; */
-    background: linear-gradient(45deg, transparent, transparent, #e6942378 , transparent, transparent, transparent);
     padding: .93vw;
     position: relative;
     background-position-x: -2000px;
@@ -36,79 +32,78 @@
     animation: bgShift;
     animation-duration: 25s;
     animation-iteration-count: infinite;
+    box-shadow: 0px 0px 10px -1px #fefefe;
+    font-weight: 300;
+    background: linear-gradient(45deg, transparent, transparent, #642066a1 , transparent, transparent, transparent);
 }
 
 .text {
     /* color: black; */
     color: transparent;
-    font-size: 1.4vw;
+    font-size: 1.5rem;
     padding: .15vw .78vw;
     opacity: 0;
     /* background: yellow; */
+    color: #642066;
+    opacity: 1;
+    background: rgb(254, 254, 254);
+    padding: 0.5vw 1vw; 
 }
 
 .overviewCont {
     padding-top: 25vh;
-    padding-bottom: 15vh;
+    padding-bottom: 25vh;
     background: black;
-    max-height: 31.25vw;
-    margin-top: 80vh;
+    max-height: 400px;
+    margin-top: 95vh;
 }
 
 .title1 {
     /* //#caaa7e */
+    position: relative;
     font-size: 3rem;
     width: fit-content;
     padding: 0 5vw;
     margin-left: 2vw;
     transition: all 1s;
+    background: #fefefe;
     color: black;
-    transform: skewX(-8deg);
-    background: #caaa7e; 
-    color: black; 
 }
 
 .title2 {
-    background: #85a3a9;
     /* //#85a3a9 */
+    position: relative;
     font-size: 3rem;
     width: fit-content;
     padding: 0 5vw;
     margin-top: .24vw;
     margin-left: 7vw;
     transition: all 1s;
+    background: #fefefe;
     color: black;
-    transform: skewX(-8deg);
 }
 
 .textCont {
     margin-top: 9vh;
-    font-weight: 100;
-    font-size: 1.5rem;
+    font-weight: 400;
+    font-size: 1.6rem;
     text-align: initial;
     padding-left: 3.9vw;
     transition: all 1s;
 }
 
 .stopCont {
-    background: #dcd2b7;
-    transform: none;
-    background: #dcd2b7;
     position: relative;
-    width: 31.25vw;
-    height: 50.8vw;
     left: 56vw;
     margin: 0;
     height: 8.125vw;
+    z-index: 3;
+    top: 6vh;
+    background: transparent;
+    width: 32.25vw;
 }
 
 .stop {
-    color: red;
-    color:  #85a3a9;
-    /* transform: scaleY(2.5);
-    transform: scaleX(2.5);
-    transform: scale(2.5); */
-    transition: all 1s;
     margin: 1.2vw;
     font-weight: 400;
     text-align: center;
@@ -116,17 +111,19 @@
     position: relative;
     top: -2vw;
     width: fit-content;
-    left: 9.2vw;
+    left: 9.2vw; 
+    transform: scale(2.5);
+    color: #b34dff;
 }
 
 .remark {
     text-transform: lowercase;
     font-size: 1.3rem;
-    font-weight: 100;
+    font-weight: 400;
     position: relative;
     top: -1vw;
     left: 3.9vw;
-    color: black;
+    color: #fefefe;
 }
 
 .hiddenOp {
@@ -151,17 +148,12 @@
     /* transform: rotate(-90deg) translateX(0px) scaleX(2.5) translateY(-112px); */
 }
 .text2Cont {
-    background: #dcd2b7;
+    background: #fefefe; 
     position: relative;
     color: black;
     text-align: end;
-    font-size: 1.5rem;
-    font-weight: 100;
     width: 31.25vw;
     height: 200vh;
-    left: 42.4vw;
-    top: -27vh;
-    z-index: -1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -169,10 +161,13 @@
     left: 49vw;
     top: -17.2vw;
     z-index: 2;
+    font-weight: 400;
+    font-size: 1.9rem;
+    top: -24.3vh;
+    width: 45vw;
 }
 .span1 {
     text-transform: uppercase;
-    font-size: 2.5rem;
     justify-content: center;
     color: aliceblue;
     position: relative;
@@ -181,9 +176,10 @@
     margin-top: 2.1vw;
     left: -4.7vw; 
     margin-bottom: -2.6vw;
+    color: #642066;
+    font-size: 3.5rem;
 }
 .span2 {
-    font-size: 2.5rem;
     position: relative;
     font-weight: 400;
     top: -4.375vw;
@@ -191,7 +187,8 @@
     left: -0.94vw;
     margin-bottom: -3.6vw;
     text-transform: uppercase;
-    color: #85a3a9;
+    color: #642066;
+    font-size: 3.5rem;
 }
 .span3 {
     position: relative;
@@ -199,13 +196,13 @@
 }
 
 .revert {
-    transform: scaleX(.5) rotate(90deg);
+    transform: scaleX(.4) rotate(90deg);
     display: flex;
     align-items: flex-start;
     width: 100vw;
     position: relative;
-    top: 38vw;
-    flex-direction: row; 
+    top: 34vw;
+    flex-direction: row;
 }
 
 .aboutCont {
@@ -213,7 +210,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    top: -7.8vw;
+    top: -13.8vw;
 }
 
 .imgCont {
@@ -222,70 +219,91 @@
     margin-top: 5vh;
 }
 
-.img {
+.imgWrap {
     width: 21.8vw;
     height: 24.6vw;
 }
 
+.img {
+    width: 23.8vw;
+    height: 30.6vw;
+}
+
 .aboutText {
-    font-size: 1.2rem;
-    background: #caaa7e;
     box-sizing: border-box;
     padding: 1.6vw;
-    font-weight: 100;
-    width: 31.25vw;
     height: fit-content;
     position: relative;
     top: 13vh;
     left: -1vw;
+    transition: all 1s ease 0s;
+    font-size: 1.3rem;
+    font-weight: 400;
+    width: 37vw;
+    text-align: initial;
+    background: #fefefe;
+    color: #000;
+    border: 3px solid #642067;
 }
 
 .aboutText::before {
     content: 'This is our Mission';
-    color: #85a3a9;
+    color: #642067;
     font-weight: 400;
     text-transform: uppercase;
-    transform: scaleX(2.5);
+    transform: scaleX(1.5);
     position: absolute;
     text-align: left;
-    left: 3vw;
+    left: 0vw;
     width: 6.3vw;
-    margin-top: -7.3vw;
+    margin-top: -10.3vw;
     opacity: .8;
+    font-size: 1.5rem;
+} 
+
+.founder {
+    font-weight: 400;
+    margin-top: 5vh;
+    color: #642067;
 }
 
 .simpleCont {
-    flex: 100%;
+    flex: 100% ;
     background: black;
     color: #f8f8f8;
     position: absolute;
     padding: 2.35vw;
-    padding-top: 7vh;
-    right: -3.75vw;
-    height: 76.5vh;
     width: 23.4vw;
-    font-weight: 100;
-    margin-top: -1vw;
+    height: 180%;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding-left: 3vw;
     right: -5.85vw;
     padding-right: 8vw;
     text-align: initial;
-    margin-top: -7.4vw;
+    margin-top: -19.4vw;
+    padding-top: 7vh;
 }
 
 .simpleTitle {
     position: relative;
-    width: 84%;
-    left: -22vw;
     margin-bottom: 0.86vw;
     transform: none;
+    background: transparent;
+    color: #8f2e92;;
+    font-weight: 400;
+    width: 120%;
+    left: -13vw;
 }
 
 .underlineBlue {
-    text-decoration: underline #85a3a9;
+    text-decoration: underline #8f2e92;
+    text-decoration-thickness: 2px;
 }
 
 .underlinePink {
-    text-decoration: underline #caaa7e;
+    text-decoration: underline #8f2e92;
+    text-decoration-thickness: 2px;
 }
 
 .titleBig {
@@ -296,8 +314,10 @@
 
 .servicesCont {
     background: #000;
-    margin-top: -109.3vw;
-    padding-top: 8vh; 
+    margin-top: -82.3vw;
+    padding-top: 8vh;
+    position: relative;
+    z-index: 2; 
 }
 
 .titleServices {
@@ -317,34 +337,41 @@
 .serviceWrap {
     overflow: hidden;
     transition: all 1s;
-    max-width: 27.3vw;
+    max-width: 29.3vw;
 }
 
 .serviceHidden {
-    max-width: 0px;
-    overflow: hidden;
-    position: relative;
+    position: absolute;
     transition: all 1s;
+    overflow: hidden;
+    max-width: 0px;
+    background: rgb(100, 32, 103);
+    width: 100vw;
+    height: 120vh;
+    margin-top: -10vh;
 }
 
 .imgService {
     width: 27.3vw;
+    border: 7px solid #642067;
 }
 
 .servicesText {
     position: relative;
-    font-size: 1.5rem;
+    font-size: 2rem;
     width: 10vw;
-    color: #85a3a9;
-    transform: scaleX(1.5);
+    /* transform: scaleX(1.5); */
+    width: 17vw;
     z-index: 1;
+    background: transparent;
+    color: rgb(254, 254, 254);
+    padding: 0px;
 }
 
 .sma {
     top: -23vh;
-    left: 27.3vw;
+    left: 25vw;
     z-index: 1;
-    background: rgba(0,0,0,.5);
     text-align: initial;
 }
 
@@ -358,9 +385,8 @@
     text-align: end;
     top: -35vh;
     left: -4vw;
-    background: rgba(0,0,0,.6);
-    left: 16vw;
-    top: -11vh; 
+    left: 10vw;
+    top: -5vh; 
 }
 
 .middleDiv {
@@ -560,6 +586,8 @@
 
 .titleSmall {
     font-size: 2rem;
+    background: black;
+    color: #fefefe;
 }
 
 .noteBlue {
@@ -647,12 +675,15 @@
     width: 100vw;
     justify-content: flex-end;
     background: #fefefe;
-    z-index: -1;
+    z-index: 1;
+    margin-top: -5vh;
 }
 
 .feedbackImgWrap {
     overflow: hidden;
-    height: 54.7vw; 
+    height: 64.7vw;
+    z-index: 1000;
+    margin-top: -15vh;
 }
 
 .feedbackImg {
@@ -698,19 +729,10 @@
     margin-top: 6vh; 
 }
 
-.fb2 {
-    position: relative;
-    left: 34vw;
-    top: -8vh;
-}
-
-.text1::before {
-    content: "L";
-    position: absolute;
-    color: #85a3a9;
-    transform: scaleX(4.5) scaleY(9.5);
-    margin-top: 13vh;
-    margin-left: -1vw;
+.fbText {
+    font-weight: 400;
+    border: 3px solid #642067;
+    padding: 15px; 
 }
 
 .author1 {
@@ -719,26 +741,29 @@
     top: 3vw;
     font-size: 2rem;
     margin-top: -5vh;
-}
-
-.text2::before {
-    content: "L";
-    position: absolute;
-    color: #caaa7e;
-    transform: scaleX(12.5) scaleY(5.5) rotate(90deg);
-    margin-top: -2vh;
-    margin-left: 7vw;
+    background: #642067;
+    color: #fefefe;
+    padding: 0.5vw 2vw;
+    top: 1vw; 
 }
 
 .author2 {
     position: relative;
     font-size: 2rem;
     top: -1vh;
+    background: #642067;
+    color: #fefefe;
+    padding: 0.5vw 2vw;
+    left: 7vw;
 }
 
 .feedbackTextCont {
     margin-top: 12.9vw;
     padding-top: 2.34vw;
+    display: flex;
+    font-weight: 400;
+    position: relative;
+    z-index: 5;
 }
 
 @keyframes fadeIn {

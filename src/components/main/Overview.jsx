@@ -27,21 +27,9 @@ export const Overview = () => {
 
   return (
     <div className={styles.overviewCont}>
-        {/*     max-height: 400px;
-    margin-top: 25vh; */}
         <div className={`${styles.title1} ${animStyles.hiddenLeft}`} ref={title1}>Oh, wait!</div>
-        {/*     background: #fefefe;
-    color: black; */}
-        <div className={`${styles.title2} ${animStyles.hiddenLeft}`} ref={title2}>Just a quick warning before we start...</div>
-        {/*          background: #fefefe;
-    color: black;  */}
-        <div id="typed-strings" className={`${styles.textCont} ${animStyles.hiddenOp}`} ref={text}>
-            {/*     margin-top: 9vh;
-    font-weight: 400;
-    font-size: 1.6rem;
-    text-align: initial;
-    padding-left: 3.9vw;
-    transition: all 1s; */}
+        <div  id='overview' className={`${styles.title2} ${animStyles.hiddenLeft}`} ref={title2}>Just a quick warning before we start...</div>
+        <div className={`${styles.textCont} ${animStyles.hiddenOp}`} ref={text}>
             <span>Beware, boosting your digital marketing strategy can <span className={styles.span}>attract new customers significantly</span>.</span> <br />
             <span>This can cause <span className={styles.span}>severe growth</span> of your <span className={styles.span}>revenue</span> and <span className={styles.span}>customer loyality</span>. </span><br />
             <span>All the content we are showing here is based on <span className={styles.span}>real life cases</span>, </span><br />
@@ -49,23 +37,10 @@ export const Overview = () => {
             <span>and the will to <span className={styles.span}>change your business for the best</span>.</span><br />
         </div>
         <div  className={styles.stopCont}>
-          {/* z-index: 3;
-    top: 6vh;
-    background: transparent;
-    width: 32.25vw; */}
-            <div className={`${styles.stop} ${animStyles.stop} ${animStyles.hiddenOp}`} ref={stop}>
-                {/*     transform: scale(2.5);
-    color: #b34dff; */}
+            <div className={`${styles.stop} ${animStyles.hiddenOp}`} ref={stop}>
                 STOP NOW!
             </div>
             <span  className={`${styles.remark} ${animStyles.hiddenRight}`} ref={remark}>*Or you might upset your competition...</span>
-            {/*     text-transform: lowercase;
-    font-size: 1.3rem;
-    font-weight: 400;
-    position: relative;
-    top: -1vw;
-    left: 3.9vw;
-    color: #fefefe; */}
         </div>
     </div>
   )

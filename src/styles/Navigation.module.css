@@ -1,3 +1,9 @@
+.navCont {
+    position: fixed;
+    top: 0;
+    z-index: 999999999999;
+}
+
 .menu {
     display: flex;
     justify-content: space-around;
@@ -6,26 +12,71 @@
     padding-left: 42vw;
     box-sizing: border-box;
     font-size: 1.5vw;
-    position: sticky;
+    position: fixed;
     top: 0;
-    background: #dcd2b7;
+    background: #fefefe;
     padding: 0;
     z-index: 1000;
+    animation: fadeIn 2s linear;
+    width: 100vw;
+}
+
+.btnCont {
+    margin-top: 3.6vw;
+    display: flex;
+    flex-direction: column;
+    animation: slideDown 1s;
+    overflow: hidden;
+    transition: all 1s;
 }
 
 .navBtn {
     text-transform: uppercase;
     padding: 7px 17px;
-    /* transition: all 1s; */
+    transition: all 1s;
     cursor: pointer;
-    color: transparent;
+    color: black;
+    opacity: 1;
+    transition: all 1s;
+    /* animation: fadeIn 2s linear 0s; */
 }
 
-/* .navBtn:hover {
-    background: red;
-} */
+.navBtn:hover {
+    background: #642067; 
+    color: #fefefe;
+    /* border-bottom: 1px solid; */
+}
+
+.hover {
+    background: #642067; 
+    color: #fefefe; 
+}
 
 .on {
-    background: red;
-    color: white;
+    background: #642067; 
+    color: #fefefe;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 0.5vw;
+    animation: none;
+    transition: all .5s;
+}
+
+.on:hover {
+    background: black;
+}
+
+.onBtn:hover {
+    background: black;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideDown {
+    0% { max-height: 0; }
+    100% { max-height: fit-content; }
 }

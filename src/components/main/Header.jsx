@@ -30,7 +30,7 @@ export const Header = ({returnReverted, returnFeedback}) => {
       returnReverted(false)
     }
 
-    if (window.scrollY > 2500) {
+    if (window.scrollY > 2000) {
       // if (fbCont) {
       //   fbCont.style.opacity = '1'
       // }
@@ -40,6 +40,7 @@ export const Header = ({returnReverted, returnFeedback}) => {
         feedback.style.background = 'white'
         setTimeout(() => {
           feedback.style.height = '132px'
+          feedback.style.zIndex = '0'
         }, 1000);
       }
     } else {
@@ -50,6 +51,7 @@ export const Header = ({returnReverted, returnFeedback}) => {
         feedback.style.background = 'black'
         setTimeout(() => {
           feedback.style.height = '200%'
+          feedback.style.zIndex = '500'
         }, 1000);
       }
     }
@@ -75,7 +77,7 @@ export const Header = ({returnReverted, returnFeedback}) => {
         opacity: `100%`,
         keyframes: [
         {color: 'rgba(0,0,0,0)'},
-        {color: '#61dafb', 
+        {color: '#642066', 
         //fontSize: '1.2rem'
         },
         ] 
@@ -108,8 +110,10 @@ export const Header = ({returnReverted, returnFeedback}) => {
 
   return (
     <div>
-        <video src={require('../../assets/video.mp4')}
-               muted 
+        <video   
+               src={require('../../assets/video4.mp4')} 
+               type="video/mp4"
+               muted  
                autoPlay="autoplay"   
                loop="loop"
                className={styles.video}> 
@@ -117,8 +121,12 @@ export const Header = ({returnReverted, returnFeedback}) => {
         <div className={styles.header}>
             <div className="" ref={title}>
             <h1 className={`${styles.title} title`}>IGNITE YOUR BUSINESS GROWTH</h1>
-                <div className={`${styles.noteBlue} text`} style={{fontSize: '1.2rem'}}>
-                    {/* Join successful businesses who've magnified their revenue with our proven, transparent, and enjoyable approach to digital marketing. */}
+                <div className={`${styles.text} text`} style={{fontSize: '1.2rem'}}>
+                  {/* font-size: 1.2rem; noteBlue
+    color: #642066;
+    opacity: 1;
+    background: rgb(254, 254, 254);
+    padding: 0.5vw 1vw; */}
                     Do you wanna talk about digital marketing?
                 </div>
             </div>
