@@ -1,0 +1,36 @@
+.phoneImg {
+    background-image: url('../assets/contact_icons.png');
+    width: 10vw;
+    height: 10vw;
+    background-size: 46vw;
+    background-position-y: -9.7vh;
+    background-position-x: 0.3vw;
+    background-repeat: no-repeat;
+}
+
+.contactBtn {
+    display: flex;
+    /* background: #00000054; */
+    padding: 1vw 2vw;
+    align-items: center;
+    /* margin: 5vh; */
+    /* border: 1px solid #000; */
+    width: fit-content; 
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.contactBtn:hover {
+    transform: scale(1.2);
+}
+
+.contactBtnText {
+    font-size: 3vw;
+    text-transform: uppercase;
+    margin-left: 2vw;
+    text-shadow: 3px 3px 0px black; 
+}
+
+.mailImg {
+    background-image: url('../assets/contact_icons.png');
+}

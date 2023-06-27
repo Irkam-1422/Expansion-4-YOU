@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect }  from 'react'
 import styles from '../styles/Navigation.module.css'
 import anime from "animejs/lib/anime.es.js"
+import { Link } from 'react-router-dom'
 
-const btns_2 = ['Home','Services','About','Work','Contact']
+const links = ['/','/services','/about','/work','/contact']
 const btns = ['Who Are We?','What Do We Offer?','Wana Know More About Us?','How Do We Work?','Want To Contact Us?']
  
 const home = [
@@ -21,7 +22,7 @@ export const Navigation = () => {
   const animation = useRef(null);
   const hoverAnime = useRef(null) 
   const [open,setOpen] = useState([])
-  const [page,setPage] = useState('0')
+  const [page,setPage] = useState(0)
 
   useEffect(() => {
   }, [])
@@ -51,12 +52,12 @@ export const Navigation = () => {
     onMouseLeave={() => setOpen([])}
     >
       <div className={`${styles.menu} buttons`}>
-          {btns.map((btn,i) => <a href={`#${btn}`}><div key={i} 
+          {btns.map((btn,i) => <Link to={`${links[i]}`}><div key={i} 
                                     id={i} 
                                     className={page == i ? `${styles.navBtn} _${i} ${styles.hover}` : `${styles.navBtn} _${i}`}
                                     onMouseEnter={handleHover} 
-                                    onClick={handleClick}
-                                    >{btn}</div></a>)} 
+                                    onClick={() => setPage(i)}
+                                    >{btn}</div></Link>)} 
       </div>
       <div className={styles.btnCont}>
       {open.map((btn,i) => <div className={`${styles.menu} 
