@@ -10,7 +10,8 @@ export const About = ({reverted}) => {
   const text1 = useRef(null)  
 
   const title2 = useRef(null)  
-  const text2 = useRef(null)  
+  const text2 = useRef(null) 
+  const container = useRef(null)  
 
   useEffect(() => {
     console.log(reverted)
@@ -18,6 +19,7 @@ export const About = ({reverted}) => {
     let elements2 = [title2.current,text2.current]
 
     if (reverted) {
+        if (container) container.current.style.transform = 'none'
         setTimeout(() => {
             elements1.forEach(elm => {
                 if (elm) elm.classList.remove(`${animStyles.hiddenLeft}`)
@@ -27,6 +29,7 @@ export const About = ({reverted}) => {
             })
         }, 1500);
     } else {
+        if (container) container.current.style.transform = 'translateX(103%)'
         elements1.forEach(elm => {
             if (elm) elm.classList.add(`${animStyles.hiddenLeft}`)
         })
@@ -38,7 +41,7 @@ export const About = ({reverted}) => {
   },[reverted])
 
   return (
-    <div className={`container ${styles.aboutMainCont}`} style={{marginTop: '39.5vw', marginLeft: '19.5vh'}}>
+    <div ref={container} className={`container ${styles.aboutMainCont}`} style={{position: 'absolute' ,top: `${window.innerHeight*2}px`}}>
         <div className={styles.revert}>
                 <div className={styles.aboutCont}>
                     <div className={`${styles.title1} ${animStyles.hiddenLeft}`} styles={{transform: 'none'}} ref={title1} id='about'>So, what is it all about?</div>

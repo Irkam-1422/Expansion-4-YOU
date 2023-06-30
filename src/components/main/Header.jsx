@@ -21,11 +21,11 @@ export const Header = ({returnReverted, returnFeedback}) => {
 
     console.log(window.scrollY)
     if (window.scrollY > 300) {
-      title.current.classList.add(`${styles.hidden}`)
-      logo.current.classList.add(`${styles.hidden}`)
+      if (title.current) title.current.classList.add(`${styles.hidden}`)
+      if (logo.current) logo.current.classList.add(`${styles.hidden}`)
     } else if (window.scrollY < 300) {
-      title.current.classList.remove(`${styles.hidden}`)
-      logo.current.classList.remove(`${styles.hidden}`)
+      if (title.current) title.current.classList.remove(`${styles.hidden}`)
+      if (logo.current) logo.current.classList.remove(`${styles.hidden}`)
     } 
 
     if (window.scrollY > height*2) {

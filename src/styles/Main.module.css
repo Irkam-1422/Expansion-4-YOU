@@ -204,9 +204,10 @@
 }
 
 .aboutMainCont {
-    margin-top: 46vw;
-    transform: rotate(90deg);
+    /* transform: rotate(90deg); */
     background: #fefefe; 
+    transition: all 1s;
+    transform: translateX(103%);
 }
 
 .revert {

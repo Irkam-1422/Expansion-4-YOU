@@ -53,10 +53,9 @@ export const Welcoming = ({reverted}) => {
             <span style={{transition: 'all 2s'}} className={`${styles.span1} ${animStyles.hiddenGrow}`} ref={digital}>Digital</span>
             <span style={{transition: 'all 2s'}} className={`${styles.span2} ${animStyles.hiddenGrow}`} ref={marketing}>Marketing</span> 
             <span className={`${styles.span3}`} ref={text2}>content!</span>
-
-            <About reverted={reverted}/>
         </div>
     </div>
+    <About reverted={reverted} />
     </>
   )
 }

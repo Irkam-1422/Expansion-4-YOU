@@ -22,9 +22,15 @@ export const Navigation = () => {
   const animation = useRef(null);
   const hoverAnime = useRef(null) 
   const [open,setOpen] = useState([])
-  const [page,setPage] = useState(0)
+  const [page,setPage] = useState(null)
 
   useEffect(() => {
+    const location = window.location.href.split('/')
+    location[location.length-1] == 'services' ?  setPage(1) :
+    location[location.length-1] == 'about' ?  setPage(2) :
+    location[location.length-1] == 'work' ?  setPage(3) :
+    location[location.length-1] == 'contact' ?  setPage(4) :
+    setPage(0)
   }, [])
 
   const handleHover = (e) => {
