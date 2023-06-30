@@ -143,7 +143,7 @@ const handleSeaBack = () => {
 }
 
   return (
-    <div className={styles.servicesCont} id='services'>
+    <div className={`${styles.servicesCont} container`} id='services'>
       <div className="">
         <div className={`${styles.title1} {styles.titleServices}`} ref={title} >Wanna know more about what we do?</div>
       </div>

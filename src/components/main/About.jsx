@@ -25,7 +25,7 @@ export const About = ({reverted}) => {
             elements2.forEach(elm => {
                 if (elm) elm.classList.remove(`${animStyles.hiddenRight}`)
             })
-        }, 2000);
+        }, 1500);
     } else {
         elements1.forEach(elm => {
             if (elm) elm.classList.add(`${animStyles.hiddenLeft}`)
@@ -38,7 +38,7 @@ export const About = ({reverted}) => {
   },[reverted])
 
   return (
-    <div>
+    <div className={`container ${styles.aboutMainCont}`} style={{marginTop: '39.5vw', marginLeft: '19.5vh'}}>
         <div className={styles.revert}>
                 <div className={styles.aboutCont}>
                     <div className={`${styles.title1} ${animStyles.hiddenLeft}`} styles={{transform: 'none'}} ref={title1} id='about'>So, what is it all about?</div>

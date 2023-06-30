@@ -26,7 +26,7 @@ export const Overview = () => {
 
 
   return (
-    <div className={styles.overviewCont}>
+    <div className={`${styles.overviewCont} container`}>
         <div className={`${styles.title1} ${animStyles.hiddenLeft}`} ref={title1}>Oh, wait!</div>
         <div  id='overview' className={`${styles.title2} ${animStyles.hiddenLeft}`} ref={title2}>Just a quick warning before we start...</div>
         <div className={`${styles.textCont} ${animStyles.hiddenOp}`} ref={text}>

@@ -6,6 +6,7 @@ import { Overview } from './main/Overview';
 import { Welcoming } from './main/Welcoming';
 import { Services } from './main/Services';
 import { Feedback } from './main/Feedback';
+import { Footer } from './Footer';
  
 export const Main = () => {
 
@@ -44,6 +45,9 @@ export const Main = () => {
         <Welcoming reverted={reverted}/>
         <Services/> 
         <Feedback feedback={feedback}/>
+        <div className="container">
+          <Footer/>
+        </div>
     </div>
   ) 
 }

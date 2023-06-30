@@ -1,40 +1,49 @@
 .video {
-    height: 117vh;
+    height: 130vh;
     position: fixed;
-    top: -10.4vh;
-    left: -27vw;
+    top: 4vh;
+    left: 0;
+    z-index: -1;
+}
+
+.logo {
+    position: fixed;
+    background-image: url('../assets/logo.png');
+    top: 18vh;
+    left: 9vw;
+    background-size: contain;
+    width: 30vw;
+    height: 19vw;
     z-index: -1;
 }
 
 .header {
     z-index: -1;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     position: fixed;
-    top: 0px;
-    left: 40vw;
+    top: -6vh;
+    left: 62vw;
     height: 85vh;
 }
 
 .title {
     color: white;
-    /* animation: fadeIn 5s; */
     margin-left: -25vw;
     font-size: 3rem;
     margin-bottom: 0;
     opacity: 0;
     padding: .93vw;
-    position: relative;
     background-position-x: -2000px;
     box-shadow: 0px 0px 10px 1px;
     animation: bgShift;
     animation-duration: 25s;
     animation-iteration-count: infinite;
-    box-shadow: 0px 0px 10px -1px #fefefe;
+    padding: 3vh 3vw;
+    box-shadow: 0px 0px 10px -1px rgb(0, 0, 0);
     font-weight: 300;
-    background: linear-gradient(45deg, transparent, transparent, #642066a1 , transparent, transparent, transparent);
+    background: linear-gradient(45deg, #000, #000, #642066 , #000, #000, #000);
 }
 
 .text {
@@ -48,14 +57,12 @@
     opacity: 1;
     background: rgb(254, 254, 254);
     padding: 0.5vw 1vw; 
+    margin-top: 1vh;
 }
 
 .overviewCont {
     padding-top: 25vh;
-    padding-bottom: 25vh;
     background: black;
-    max-height: 400px;
-    margin-top: 95vh;
 }
 
 .title1 {
@@ -141,30 +148,31 @@
 }
 
 .welcomingCont {
-    padding-bottom: 15vh;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     padding-left: 7vw;
-    padding-top: 7vh;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
     transition: all 2s; 
     /* transform: rotate(-90deg) translateX(0px) scaleX(2.5) translateY(-112px); */
 }
 .text2Cont {
     background: #fefefe; 
-    position: relative;
     color: black;
     text-align: end;
-    width: 31.25vw;
     height: 200vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 25vh; 
-    left: 49vw;
-    top: -17.2vw;
     z-index: 2;
     font-weight: 400;
     font-size: 1.9rem;
-    top: -24.3vh;
-    width: 45vw;
+    margin-left: 0px;
+    width: 52vw;
 }
 .span1 {
     text-transform: uppercase;
@@ -195,22 +203,34 @@
     left: 3.9vw; 
 }
 
+.aboutMainCont {
+    margin-top: 46vw;
+    transform: rotate(90deg);
+    background: #fefefe; 
+}
+
 .revert {
-    transform: scaleX(.4) rotate(90deg);
+    height: 100%;
+    width: 100vw;
+    position: static;
+    transform: none;
     display: flex;
     align-items: flex-start;
-    width: 100vw;
-    position: relative;
-    top: 34vw;
-    flex-direction: row;
+    flex-direction: row; 
+    box-sizing: border-box;
 }
 
 .aboutCont {
-    transform: none;
+    position: static;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    padding-top: 10vh;
+    margin-right: 4vw;
+    margin-left: -4vw;
     display: flex;
     flex-direction: column;
-    position: relative;
-    top: -13.8vw;
+    justify-content: flex-start;
 }
 
 .imgCont {
@@ -268,21 +288,22 @@
 }
 
 .simpleCont {
-    flex: 100% ;
+    flex: 100% 1;
     background: black;
     color: #f8f8f8;
-    position: absolute;
     padding: 2.35vw;
     width: 23.4vw;
-    height: 180%;
+    height: 100%;
     font-size: 1.5rem;
     font-weight: 400;
     padding-left: 3vw;
-    right: -5.85vw;
     padding-right: 8vw;
     text-align: initial;
-    margin-top: -19.4vw;
     padding-top: 7vh;
+    transition: all 1s ease 0s;
+    position: static;
+    margin: 0; 
+    box-sizing: border-box;
 }
 
 .simpleTitle {
@@ -584,6 +605,13 @@
     padding-left: 30vw;
 }
 
+.titlePink{
+    background: #642066;
+    color: #fefefe;
+    width: max-content;
+    z-index: 10;
+}
+
 .titleSmall {
     font-size: 2rem;
     background: black;
@@ -593,10 +621,14 @@
 .noteBlue {
     width: fit-content;
     position: relative;
-    color: #85a3a9; 
     text-transform: uppercase;
     transform: scaleX(1.5);
     font-weight: 400;
+
+    background: #642067;
+    color: #fefefe;
+    padding: 0.5vw 2vw;
+    top: 1vw; 
 }
 
 .notePink {
@@ -669,21 +701,24 @@
     left: 14vw;
 }
 
+.feedbackCont {
+    position: static;
+    display: flex;
+    flex-direction: row-reverse;
+    background: #fefefe;
+}
+
 .feegbackImgCont {
     display: flex;
-    position: absolute;
-    width: 100vw;
     justify-content: flex-end;
     background: #fefefe;
     z-index: 1;
-    margin-top: -5vh;
 }
 
 .feedbackImgWrap {
     overflow: hidden;
-    height: 64.7vw;
+    height: 66.7vw;
     z-index: 1000;
-    margin-top: -15vh;
 }
 
 .feedbackImg {
@@ -693,7 +728,7 @@
     transition: all 12s;
     transition-timing-function: linear;
     /* margin-top: -1299px; */
-    height: 156.25vw;
+    height: 320.25vw;
     background-size: contain;
     animation: logosSpin_1 25s;
     animation-iteration-count: infinite;
@@ -715,8 +750,8 @@
     position: absolute;
     width: 100%;
     height: 200%;
-    margin-top: -15vw;
     z-index: 3;
+    margin: 0
 }
 
 .feedback {
@@ -758,12 +793,11 @@
 }
 
 .feedbackTextCont {
-    margin-top: 12.9vw;
-    padding-top: 2.34vw;
     display: flex;
     font-weight: 400;
     position: relative;
-    z-index: 5;
+    height: 100%;
+    align-items: center;
 }
 
 @keyframes fadeIn {
