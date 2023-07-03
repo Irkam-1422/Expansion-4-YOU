@@ -312,6 +312,9 @@
     min-height: 100vh;
     border-top: 1px solid;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10%;
 }
 
 .smFirstStep {
@@ -455,7 +458,7 @@
 
 .textCont {
     position: relative;
-    font-size: 2.5vw;
+    font-size: 1.5rem;
 }
 
 .textCont::before{
@@ -465,7 +468,7 @@
     height: 500%;
     background: #642066;
     left: 100%;
-    top: 90%;
+    top: 88%;
     z-index: 1000;
 }
 
@@ -476,7 +479,7 @@
     background: #aa67ae;
     position: absolute;
     left: 98.8%;
-    top: 155%;
+    top: 147%;
     transform: skewY(50deg) skewX(4deg);
 } 
 
@@ -492,7 +495,7 @@
     padding: 0.5vw 2vw;
     width: fit-content;
     margin: 5vh 0;
-    margin-left: 34vw;
+    margin-left: 30vw;
     margin-bottom: -1vh;
 }
 
@@ -504,7 +507,7 @@
     background: #ab67ae;
     transform: skewY(62deg);
     left: 100%;
-    top: 117%;
+    top: 104%;
 } 
 
 .title2::after{
@@ -516,8 +519,8 @@
     top: 100%;
     left: 48%;
     transform: skewX(35deg);
-    left: 45%;
-    height: 945%;
+    left: 45.5%;
+    height: 830%;
 } 
 
 .contactTextCont {

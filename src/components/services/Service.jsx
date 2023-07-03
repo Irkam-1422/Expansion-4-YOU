@@ -2,13 +2,6 @@ import React from 'react'
 import styles from '../../styles/Services.module.css'
 import animStyles from '../../styles/Animation.module.css'
 import {observer} from '../../observers.js'
-import { MarketingStrategy } from './MarketingStrategy'
-import { ECommerce } from './ECommerce'
-import { Branding } from './Branding'
-import { SearchEngineAdvertising } from './SearchEngineAdvertising'
-import { SocialMediaAdvertising } from './SocialMediaAdvertising'
-import { WebDevelopment } from './WebDevelopment'
-import { SearchEngineOptimization } from './SearchEngineOptimization'
 import { InsideService } from './InsideService'
  
 export const Service = ({service,i}) => {

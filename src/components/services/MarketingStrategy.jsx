@@ -3,13 +3,15 @@ import styles from '../../styles/Services.module.css'
 import animStyles from '../../styles/Animation.module.css'
 import { Contact } from './Contact'
 import { Step } from './Step'
+import { Step2 } from './Step2'
 
 const questions = [
     'What is your mission?',
     'What do you want to bring to this world?',
     'How do you want to change it?',
     'Why is your product unique?',
-    'What is that special thing about you you can provide to you customers that others can’t?'
+    'What makes you different?'
+    //'What is that special thing about you you can provide to you customers that others can’t?'
 ]
 
 const questions2 = [
@@ -22,20 +24,19 @@ const questions2 = [
 ]
 
 const questions3 = [
-    'How are you gonna address your audience?'
+    'How to address your audience?'
     ,'Wether it’s better to use Linkedin and Facebook,'
-    ,'Or maybe your customers spend the majority of their time on Instagram?'
-    ,'Or maybe even TikTok (you never know)',
-    'And what about Google?'
+    ,'Or maybe they spend more time on Instagram?',
+    'And what about Google?',
 ]
 
 const questions4 = [
-    'How often should you post on social media?',
-	'What do you talk about?',
-    'How do you present your product?',
-	'And how do you announce a sale or an upgrade of your product?',
-	'What can you add to the boring plain photo so it looks fun and interesting?',
-	'Or maybe you’d better to focus on video content?',
+    'What to post on social media?',
+	//'What do you talk about?',
+    'How to present your product?',
+	'What to talk about?',
+	'How to be creative and engage your audience?',
+	'Which type of content to focus on?',
 ]
 
 const steps = [
@@ -47,34 +48,19 @@ const steps = [
 
 export const MarketingStrategy = () => {
 
-  //const container = useRef(null)
   const title1 = useRef(null)
   const title2 = useRef(null)
 
   useEffect(() => {
     if (title1.current && title2.current) {
-        // let timerId = setTimeout(() => {
-        //     container.current.style.background = '#642067'
             setTimeout(() => {
                 title1.current.classList.remove(`${animStyles.hiddenRight}`)
                 title2.current.classList.remove(`${animStyles.hiddenRight}`)
             }, 300)
-        // }, 100)
     }
   },[])
 
-//   const handleClick = () => {
-//     container.current.style.background = '#fefefe'
-//     setTimeout(() => {
-//         closeModal()
-//     },500)
-//   }
-
   return (
-    // <div className={styles.insideCont} ref={container}>
-    //     <div className={styles.back} onClick={handleClick}> 
-    //         {'<'}<div className={styles.backDash}>-</div> Back
-    //     </div>
     <>
         <div className={styles.msCont}>
         <h1 className={styles.msTitle}>What is Marketing Strategy?</h1>
@@ -100,7 +86,7 @@ export const MarketingStrategy = () => {
         </div>
 
         <div className={styles.stepsCont}>
-            {steps.map(step => <Step step={step}/> )}
+            {steps.map(step => <Step2 step={step}/> )} 
         </div>
 
         <div className={styles.stepsCont}>
@@ -127,6 +113,5 @@ export const MarketingStrategy = () => {
             </div>
         </div>
     </>
-    // </div>
   )
 }
