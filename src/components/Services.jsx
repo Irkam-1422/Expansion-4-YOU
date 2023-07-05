@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React, {useEffect} from 'react'
 import { Service } from './services/Service'
 import styles from '../styles/Services.module.css'
 import { MarketingStrategy } from './services/MarketingStrategy'
+import {Footer} from './Footer' 
 
 const services = [
   {img: 'SMA.jpg', title: 'Marketing Strategy'},
@@ -15,12 +16,22 @@ const services = [
 
 export const Services = () => {
 
+  useEffect(() => {
+    const footer = document.getElementById('footer')
+    if (footer) footer.style.display = 'flex'
+  },[])
+
   return (
     <div style={{marginTop: '6vh'}}>
-      <div className={styles.servicesCont}>
-        <h1 className={styles.servicesTitle}>Our Services</h1>
+      <div className={styles.mainCont}>
+        <div className={styles.servicesCont}>
+          <h1 className={styles.servicesTitle}>Our Services</h1>
+        </div>
+        {services.map((service,i) => <Service service={service} i={i}/>)}
       </div>
-      {services.map((service,i) => <Service service={service} i={i}/>)}
+      <div className={`${styles.footerCont} container`} style={{position: 'relative'}}>
+        <Footer />
+      </div>
     </div>
   )
 }

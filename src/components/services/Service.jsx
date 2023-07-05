@@ -25,7 +25,6 @@ export const Service = ({service,i}) => {
              style={{transition: 'all 1s'}}
              >
             <div className={`${styles.serviceWrap} ${styles[`bbb${i%2==0 ? '2' : '1'}`]} ${animStyles[i%2==0 ? 'hiddenRight' : 'hiddenLeft']}`}  
-                 style={i == 2 ? {margin: '5vh 0'} : {}}
                  ref={srvc}
                  onClick={handleClick}
                 >
@@ -34,6 +33,8 @@ export const Service = ({service,i}) => {
                      alt="" 
                      />
                 <div className={i%2 == 0 ? `${styles.servicesText_2} ${styles[`aaa${i}`]}` : `${styles.servicesText_1} ${styles[`aaa${i}`]}`} id={`srvc${i}`}>
+                    {/* position: absolute;
+    top: 10%; */}
                     {service.title}
                 </div>
             </div> 

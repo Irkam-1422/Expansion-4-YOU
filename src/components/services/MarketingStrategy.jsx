@@ -2,7 +2,6 @@ import React, {useState,useRef,useEffect} from 'react'
 import styles from '../../styles/Services.module.css'
 import animStyles from '../../styles/Animation.module.css'
 import { Contact } from './Contact'
-import { Step } from './Step'
 import { Step2 } from './Step2'
 
 const questions = [
@@ -40,10 +39,16 @@ const questions4 = [
 ]
 
 const steps = [
-    {num: '01', title: ['First of all,','it’s about','YOU.'], questions: questions},
-    {num: '02', title: ['Then, it’s','about your','customers.'], questions: questions2},
-    {num: '03', title: ['Now it’s time',' to think about','channels.'], questions: questions3},
-    {num: '04', title: ['And finally','it’s about','how and what.'], questions: questions4}
+    {num: '01', title: ['First of all,','it’s about','YOU.'], questions: questions, style: {}},
+
+    {num: '02', title: ['Then, it’s','about your','customers.'], questions: questions2, 
+    style: {num: {marginLeft: '4%'}, title: {marginLeft: '17%'}, span: {padding: '2%',transform: 'scaleX(1.1)'}, img: {top: '40%',width: '35%',left: '0'}}},
+
+    {num: '03', title: ['Now it’s time',' to think about','channels.'], questions: questions3, 
+    style: {num: {marginLeft: '3%'}, title: {marginLeft: '10%', width: 'max-content'}, span: {padding: '2%'}, img: {top: '58.5%',width: '35%'}}},
+
+    {num: '04', title: ['And finally','it’s about','how and what.'], questions: questions4, 
+    style: {num: {marginLeft: '3%'}, title: {marginLeft: '18%'}, span: {padding: '2%', fontSize: '2.3rem', width: 'max-content'}, img: {width: '40%'}}}
 ]
 
 export const MarketingStrategy = () => {

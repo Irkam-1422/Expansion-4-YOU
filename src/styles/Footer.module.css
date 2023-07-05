@@ -101,3 +101,12 @@
     width: 100%;
     margin-top: 1vh;
 }
+
+.navbtn {
+    color: #000;
+}
+
+.navbtn:hover {
+    color: #8f2e92;
+    cursor: pointer;
+}

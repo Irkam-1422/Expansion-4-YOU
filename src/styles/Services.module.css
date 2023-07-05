@@ -1,3 +1,18 @@
+.mainCont {
+    background: rgb(0,0,0);
+    position: relative;
+    z-index: 5;
+}
+
+.coverDiv {
+    position: absolute;
+    background: #fefefe;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    transition: all 1s;
+    opacity: 1;
+}
 .servicesCont {
     width: 100vw;
     display: flex;
@@ -28,16 +43,12 @@
 .serviceWrap {
     transition: all 1s;
     position: relative;
-}
-
-.serviceWrap::before {
-    content: '';
-    background: rgb(0,0,0);
-    width: 100%;
-    height: 15vh;
-    z-index: 10000;
-    position: absolute;
-    top: 72%;
+    height: 29vw;
+    width: fit-content;
+    overflow: hidden;
+    padding: 2%;
+    background: linear-gradient(45deg, #ca33cf, #61dafb);
+    margin-bottom: 30vh;
 }
 
 .bbb2::after { 
@@ -72,7 +83,6 @@
 
 .imgService {
     width: 53.3vw;
-    border: 7px solid #642067;
     transition: all 1s;
 }
 
@@ -88,6 +98,8 @@
     position: relative;
     font-size: 3.75vw;
     color: rgb(254, 254, 254);
+    position: absolute;
+    top: 10%;
 }
 
 .servicesText_1 {
@@ -101,6 +113,8 @@
     position: relative;
     font-size: 3.75vw;
     color: rgb(254, 254, 254);  
+    position: absolute;
+    top: 10%;
 }
 
 .aaa0::before, .aaa4::before {
@@ -242,6 +256,7 @@
 .insideCont {
     background: #642067;
     background: #fefefe;
+    background: linear-gradient(45deg, #ca33cf, #61dafb);
     position: fixed;
     width: 100%;
     height: 100%;
@@ -302,6 +317,7 @@
 .noteTitle {
     background: black;
     color: #642068;
+    color: #ca33cf; 
     padding: 0.5vw 2vw;
     width: fit-content;
     border-bottom: 3px solid;
@@ -464,9 +480,10 @@
 .textCont::before{
     content: '';
     position: absolute;
-    width: 43%;
+    width: 22%;
     height: 500%;
     background: #642066;
+    background: linear-gradient(45deg, #7f5ee1, #5dcbf8);
     left: 100%;
     top: 88%;
     z-index: 1000;
@@ -532,8 +549,24 @@
     justify-content: flex-end;
 }
 
+.footerCont {
+    background: linear-gradient(45deg, #ca33cf, #61dafb);
+    position: relative;
+    z-index: 0; 
+    /* transition: all 25s linear; */
+    background: linear-gradient(45deg, #ca33cf, #61dafb, #ca33cf, #61dafb, #ca33cf, #61dafb, #ca33cf);
+    background-size: 2000vh;
+    animation: bgShift 60s linear infinite;
+}
+
 @keyframes colorFade {
     0% {color: #fefefe}
     50% {color: transparent}
     100% {color: #fefefe}
+}
+
+@keyframes bgShift {
+    0% {background-position: 0} 
+    50% {background-position: -1800vh}
+    100% {background-position: 0}
 }

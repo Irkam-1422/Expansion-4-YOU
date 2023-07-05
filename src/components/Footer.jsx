@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../styles/Footer.module.css'
 import emailjs from 'emailjs-com'
+import { Link } from 'react-router-dom'
 
 export const Footer = () => {
 
@@ -18,6 +19,15 @@ export const Footer = () => {
        });
   }
 
+  const handleMouseEnter = (e) => {
+    const text = e.target.innerHTML.slice(2)
+    e.target.innerHTML = `> ${text}`
+  }
+  const handleMouseLeave = (e) => {
+    const text = e.target.innerHTML.slice(4)
+    e.target.innerHTML = `- ${text}`
+  }
+
   return (
     <div className={styles.footerCont} id='footer'>
         {/* z-index: -1;
@@ -32,11 +42,31 @@ export const Footer = () => {
         </div>
         <div className={styles.cont}>
             <h1 className={styles.h1}>Quick Links</h1>
-            <div className="">- Home</div>
-            <div className="">- Services</div>
-            <div className="">- About</div>
-            <div className="">- Work</div>
-            <div className="">- Contact</div>
+            <Link to='/'>
+                <div className={styles.navbtn} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                    - Home
+                </div>
+            </Link>
+            <Link to='/services'>
+                <div className={styles.navbtn} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                    - Services
+                </div>
+            </Link>
+            <Link to='/about'>
+                <div className={styles.navbtn} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                    - About
+                </div>
+            </Link>
+            <Link to='/work'>
+                <div className={styles.navbtn} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                    - Work
+                </div>
+            </Link>
+            <Link to='/contact'>
+                <div className={styles.navbtn} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                    - Contact
+                </div>
+            </Link>
         </div>
         <div className={styles.cont}>
             <h1 className={styles.h1}>Connect</h1>
