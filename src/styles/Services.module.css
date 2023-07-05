@@ -31,6 +31,7 @@
     width: 100vw;
     justify-content: center;
     padding-left: 10vw;
+    height: 50vw;
 }
 
 .serviceCont_1 {
@@ -38,6 +39,7 @@
     width: 100vw;
     justify-content: flex-start;
     padding-left: 13vw;
+    height: 50vw;
 }
 
 .serviceWrap {
@@ -263,12 +265,13 @@
     z-index: 99999999999;
     top: 0;
     transition: all 1s;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .back {
     position: absolute;
-    top: 3vh;
+    top: 7%;
     left: 3vw;
     font-size: 2vw;
     display: flex;
@@ -311,7 +314,7 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
-    height: 12.5vh;
+    height: fit-content;
 }
 
 .noteTitle {
@@ -477,7 +480,7 @@
     font-size: 1.5rem;
 }
 
-.textCont::before{
+/* .textCont::before{
     content: '';
     position: absolute;
     width: 22%;
@@ -487,9 +490,9 @@
     left: 100%;
     top: 88%;
     z-index: 1000;
-}
+} */
 
-.textCont::after{
+/* .textCont::after{
     content: '';
     width: 10%;
     height: 336%;
@@ -498,7 +501,7 @@
     left: 98.8%;
     top: 147%;
     transform: skewY(50deg) skewX(4deg);
-} 
+}  */
 
 .title2 {
     color: #fefefe;

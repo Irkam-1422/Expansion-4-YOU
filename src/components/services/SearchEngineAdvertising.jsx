@@ -123,11 +123,12 @@ export const SearchEngineAdvertising = () => {
                 <div className={styles.msDefinition}>
                     <div className={styles.textCont}>
                         All of these questions can be answered with two words: 
-                        <div className={styles.title2}>
-                            – Search Engine Advertising.
-                        </div>
                     </div>
-                    <div className={styles.contactTextCont}>
+                    <div className="">
+                      <div className={styles.title2}>
+                            – Search Engine Advertising.
+                      </div>
+                      <div className={styles.contactTextCont}>
                         <div>
                             As this is your way to become closer with your customers,
                             explore what they really want and develop the solution they actually need, 
@@ -137,6 +138,7 @@ export const SearchEngineAdvertising = () => {
                         </div>
                         <hr style={{width: '100%'}}/>
                         <Contact/>  
+                      </div>
                     </div>
                 </div>
             </div>
