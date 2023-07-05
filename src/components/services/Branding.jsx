@@ -112,19 +112,21 @@ export const Branding = () => {
                 <div className={styles.msDefinition}>
                     <div className={styles.textCont}>
                         All of these questions can be answered with two words: 
+                    </div>
+                    <div styles={{overflow: 'hidden'}}>
                         <div className={styles.title2}>
                             – Branding Strategy.
                         </div>
-                    </div>
-                    <div className={styles.contactTextCont}>
-                        <div>
-                            As investing in a rock-solid branding strategy is key to making your brand stand out,
-                            keeping customers engaged, and ensuring they keep coming back for more. 
-                            It's like laying the foundation for a long-lasting connection that
-                            keeps your business thriving.
+                        <div className={styles.contactTextCont}>
+                          <div>
+                              As investing in a rock-solid branding strategy is key to making your brand stand out,
+                              keeping customers engaged, and ensuring they keep coming back for more. 
+                              It's like laying the foundation for a long-lasting connection that
+                              keeps your business thriving.
+                          </div>
+                          <hr style={{width: '100%'}}/>
+                          <Contact/>  
                         </div>
-                        <hr style={{width: '100%'}}/>
-                        <Contact/>  
                     </div>
                 </div>
             </div>

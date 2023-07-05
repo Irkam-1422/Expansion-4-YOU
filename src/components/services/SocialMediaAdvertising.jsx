@@ -102,22 +102,22 @@ export const SocialMediaAdvertising = () => {
                 <div className={styles.msDefinition}>
                     <div className={styles.textCont}>
                         All of these questions can be answered with two words: 
-                        <div className={styles.title2}>
-                          {/* width: max-content;
-    margin-left: 21vw; */}
+                    </div>
+                    <div styles={{overflow: 'hidden'}}>
+                        <div className={styles.title2} style={{marginLeft: '21vw'}}>
                             – Social Media Advertizing.
                         </div>
-                    </div>
-                    <div className={styles.contactTextCont}>
-                        <div>
-                            As this is your way to become closer with your customers,
-                            explore what they really want and develop the solution they actually need, 
-                            reach your business goals and attract new people who 
-                            (with quite high probability) might eventually become 
-                            your loyal customers.
-                        </div>
-                        <hr style={{width: '100%'}}/>
-                        <Contact/>  
+                      <div className={styles.contactTextCont}>
+                          <div>
+                              As this is your way to become closer with your customers,
+                              explore what they really want and develop the solution they actually need, 
+                              reach your business goals and attract new people who 
+                              (with quite high probability) might eventually become 
+                              your loyal customers.
+                          </div>
+                          <hr style={{width: '100%'}}/>
+                          <Contact/>  
+                      </div>
                     </div>
                 </div>
             </div>
