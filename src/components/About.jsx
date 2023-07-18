@@ -7,6 +7,20 @@ export const About = () => {
   const [c3,setC3] = useState(10)
   const [ currVal, setCurrVal ] = useState(0);
 
+  const cont1 = useRef(null)
+  const cont2 = useRef(null)
+
+  useEffect(() => {
+    console.log('scrolling:',window.scrollY)
+    if (window.scrollY > 1) {
+      cont1.current.style.transform = 'translateX(-100%)'
+      cont2.current.style.transform = 'translateX(100%)'
+    } else {
+      cont1.current.style.transform = 'translateX(0%)'
+      cont2.current.style.transform = 'translateX(0%)'
+    }
+  },[window.scrollY])
+
   useEffect(() => {
     c1 !== 10 ? setTimeout(setC1, 300, c1 + 1) : setTimeout(setC1, 2000, 0)
   }, [ c1 ]);
@@ -19,11 +33,17 @@ export const About = () => {
     c3 !== 10 ? setTimeout(setC3, 300, c3 + 1) : setTimeout(setC3, 2000, 0)
   }, [ c3 ]);
 
+  const handleScroll = (e) => {
+    console.log('scrolling')
+    cont1.current.style.transform = 'translateX(-100%)'
+    cont2.current.style.transform = 'translateX(100%)'
+  }
+
   return (
-    <div>
+    <div> 
       <div className={styles.aboutCont}>
-          <div className={styles.aboutFlex1}>PROVIDING CLIENTS WITH SUPERIOR <span className={styles.span}>DIGITAL</span> MARKETING <hr className={styles.hr}/> </div>
-          <div className={styles.aboutFlex2}>
+          <div className={styles.aboutFlex1} ref={cont1}>PROVIDING CLIENTS WITH SUPERIOR <span className={styles.span}>DIGITAL</span> MARKETING <hr className={styles.hr}/> </div>
+          <div className={styles.aboutFlex2} ref={cont2}>
             <h1 className={styles.thinner}>Let's talk numbers!</h1>
             <div className={styles.numsCont}>
               <div className="">

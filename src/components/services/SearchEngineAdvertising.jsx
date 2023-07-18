@@ -125,7 +125,7 @@ export const SearchEngineAdvertising = () => {
                         All of these questions can be answered with two words: 
                     </div>
                     <div style={{overflow: 'hidden'}}>
-                      <div className={styles.title2}>
+                      <div className={styles.title2} style={{marginLeft: '18vw'}}>
                             – Search Engine Advertising.
                       </div>
                       <div className={styles.contactTextCont}>

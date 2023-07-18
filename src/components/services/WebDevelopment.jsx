@@ -92,7 +92,7 @@ export const WebDevelopment = () => {
                     <div className={styles.textCont}>
                         All of these questions can be answered with two words: 
                     </div>
-                    <div styles={{overflow: 'hidden'}}>
+                    <div style={{overflow: 'hidden'}}>
                         <div className={styles.title2}>
                             – Web Development.
                         </div>

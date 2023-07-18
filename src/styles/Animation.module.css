@@ -44,3 +44,18 @@
     50% {transform: scale(2.5);}
     100% {transform: scaleX(2.5);}
 }
+
+.coverLeft {
+    transform: translateX(90%);
+}
+.coverRight {
+    transform: translateX(-90%);
+}
+
+.coverGone {
+    transform: none;
+}
+
+.test {
+    opacity: 0;
+}

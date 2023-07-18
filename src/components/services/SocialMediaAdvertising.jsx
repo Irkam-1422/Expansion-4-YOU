@@ -103,7 +103,7 @@ export const SocialMediaAdvertising = () => {
                     <div className={styles.textCont}>
                         All of these questions can be answered with two words: 
                     </div>
-                    <div styles={{overflow: 'hidden'}}>
+                    <div style={{overflow: 'hidden'}}>
                         <div className={styles.title2} style={{marginLeft: '21vw'}}>
                             – Social Media Advertizing.
                         </div>

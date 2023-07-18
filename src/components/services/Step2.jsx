@@ -8,8 +8,13 @@ export const Step2 = ({step}) => {
   const cont = useRef(null)  
 
   React.useEffect(() => { 
-    if (+step.num%2 == 0) {observer(`${animStyles.hiddenRight}`).observe(cont.current)}
-    else {observer(`${animStyles.hiddenLeft}`).observe(cont.current)}
+    console.log(window.innerWidth) 
+    if (window.innerWidth < 850) {
+        +step.num%2 == 0 ? cont.current.classList.remove(`${animStyles.hiddenRight}`) : cont.current.classList.remove(`${animStyles.hiddenLeft}`)
+    } else {
+        if (+step.num%2 == 0) {observer(`${animStyles.hiddenRight}`).observe(cont.current)}
+        else {observer(`${animStyles.hiddenLeft}`).observe(cont.current)}
+    }
   }, [])  
 
   return (

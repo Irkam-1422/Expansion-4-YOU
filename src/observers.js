@@ -44,6 +44,18 @@ const observer = (clas) => {
   }, options);
 } 
 
+const observer2 = (clas) => {
+  return new IntersectionObserver((entry) => {
+      entry.forEach(change => {  
+        if (change.isIntersecting) {
+          change.target.classList.add(`${clas}`)
+        } else {
+          change.target.classList.remove(`${clas}`) 
+        }
+      });
+  }, options);
+} 
+
 // const bottomObserver = (clas, [elements]) => {
 //   return new IntersectionObserver((entry) => {
 //     entry.forEach(change => {  
@@ -64,6 +76,7 @@ const observer = (clas) => {
 
 module.exports = { 
   observer, 
+  observer2
   //bottomObserver
   // observerOp,
   // observerRight
