@@ -1,6 +1,8 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useRef,useState} from 'react'
 import { Step } from './work/Step'
 import styles from '../styles/Work.module.css'
+import { Footer } from './Footer'
+ 
 
 const steps = [
   {
@@ -83,26 +85,50 @@ const steps = [
 ]
 
 export const HowWeWork = () => {
+
+  const cont = useRef(null)
+  const other = useRef(null)
+  const [height,setHeight] = useState(window.innerHeight*4)
   
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  // },[]) 
+  useEffect(() => {
+  // window.addEventListener("scroll", handleScroll);
+   const footer = document.getElementById('footer')
+   if (footer) footer.style.display = 'flex'
+
+   console.log(getCoords(cont.current).bottom);
+   if (cont.current) setHeight(getCoords(cont.current).top)
+  },[]) 
+
+  const getCoords = (elem) => {
+    let box = elem.getBoundingClientRect();
+  
+    return {
+      top: box.top + window.pageYOffset,
+      right: box.right + window.pageXOffset,
+      bottom: box.bottom + window.pageYOffset,
+      left: box.left + window.pageXOffset
+    };
+  }
 
   return (
     <div>
       <div className={styles.header}>
         <video className={styles.video} 
-               src={require('../assets/water2.mp4')} 
+               style={cont.current ? {height: `${height}px`} : {}}
+               src={require('../assets/water2.mp4')}  
                type="video/mp4"
                muted  
                autoPlay="autoplay"   
                loop="loop" 
                ></video>  
-        {/*     position: absolute;
-    top: 0; 
-    left: 0;
-    z-index: -1; */}
-
+        <div className="">
+          <div className={styles.btns}>
+            <button className={styles.btn}>Why do YOU need <br /> digital marketing</button>
+            <button className={styles.btn}>Contact Us</button>
+            <button className={styles.btn}>Articles</button>
+            <button className={styles.btn}>Cases</button>
+          </div>
+        </div>
         <h1 className={styles.headerH1}>THE STRATEGY THAT WORKS</h1> 
         <div className={styles.headerText}>
         As an entrepreneur you only want one thing, <span className={styles.underline}>GROW</span>! 
@@ -110,7 +136,10 @@ export const HowWeWork = () => {
         who already knows where to find you is very exited. 
         </div>
       </div>
-      {steps.map((step,i) => <Step step={step} i={i}/>)}
+      {steps.map((step,i) => <div className=""><Step step={step} i={i}/></div>)}
+      <div className={`${styles.footerCont}`} style={{position: 'relative',  background: 'linear-gradient(45deg, #61dafb, #ca33cf)'}} ref={cont}>
+        <Footer />
+      </div>
     </div>
   )
 }

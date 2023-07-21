@@ -2,7 +2,7 @@
 .header {
     position: relative;
     padding: 5% 7%;
-    padding-top: 25%;  
+    padding-top: 10%;  
 }
 
 .video {
@@ -15,6 +15,35 @@
     height: 316vh;
     height: 325vh;
     left: -106vw; 
+    z-index: 1;
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    z-index: 1;
+    position: relative;
+}
+.btn {
+    border: none;
+    outline: none;
+    text-align: end;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5%;
+    transition: all 1s;
+    cursor: pointer;
+    background: linear-gradient(45deg, rgb(0, 0, 0),rgb(0, 0, 0), #ca33cf, #61dafb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300%;
+    background-position-x: right; 
+}
+
+.btn:hover {
+    background-position-x: initial; 
 }
 
 .headerH1 {
@@ -26,12 +55,16 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: .4vh .4vh #fefefe;
+    z-index: 1;
+    position: relative;
 }
 
 .headerText {
     font-size: 1.4rem;
     text-align: end;
     padding-left: 14%; 
+    z-index: 1;
+    position: relative;
 }
 
 .stepCont {
@@ -45,10 +78,10 @@
     position: relative;
     transition: all 1s;
     margin-top: 1%;
+    z-index: 1;
 }
 
 .img {
-    width: 10vw;
     height: 30vw;
     background: linear-gradient(45deg, #ca33cf, #61dafb);
     flex: 40%;
@@ -109,3 +142,37 @@
 .coverRight {
     transform: translateX(-90%);
 }
+
+.footerCont {
+    background: linear-gradient(45deg, #ca33cf, #61dafb);
+    position: relative;
+    z-index: 0; 
+    background: linear-gradient(45deg, #ca33cf, #61dafb, #ca33cf, #61dafb, #ca33cf, #61dafb, #ca33cf);
+    background-size: 2000vh;
+    animation: bgShift 60s linear infinite;
+    height: 62.5vh;
+    margin-top: 37.5vh;
+}
+
+@media (orientation: portrait) {
+    .header {
+        padding-top: 30%;
+        padding-bottom: 10%;
+    }
+    .headerH1 {
+        font-size: 10.5rem;
+    }
+    .headerText {
+        font-size: 2.4rem;
+    }
+    .text {
+        font-size: 2.4rem;
+    }
+    .h1 {
+        font-size: 3.5rem;
+    }
+    .img {
+        flex: 60%;
+        height: 39vw;
+    }
+  }
