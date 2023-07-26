@@ -31,9 +31,9 @@ export const Welcoming = ({reverted}) => {
 
   return (
     <>
-    <div className={`${styles.welcomingCont} container`} id='revert'>
+    <div className={`${styles.welcomingCont} container`} id='revert' style={window.innerHeight>window.innerWidth?{height: 'auto'}:{}}>
         {/* transform: rotate(-90deg) translate(-33vh, -82vw); */}
-        <div className="" style={{width: '35%', paddingTop: '5vh'}}>
+        <div className={styles.welcomingSubcont} style={{width: '35%', paddingTop: '5vh'}}>
           <div className={`${styles.title1} ${animStyles.hiddenLeft} ${styles.titlePink}`} 
               ref={title1}
               style={{margin: '0', marginLeft: '-3vw' }}

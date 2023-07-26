@@ -19,6 +19,7 @@
     z-index: 1000;
     animation: fadeIn 2s linear;
     width: 100vw;
+    transition: all 1s;
 }
 
 .btnCont {
@@ -42,14 +43,14 @@
 }
 
 .navBtn:hover {
-    background: #642067; 
-    color: #fefefe;
+    background: linear-gradient(45deg, #ca33cf, #61dafb);
+        color: #fefefe; 
     /* border-bottom: 1px solid; */
 }
 
 .hover {
-    background: #642067; 
-    color: #fefefe; 
+    background: linear-gradient(45deg, #ca33cf, #61dafb);
+        color: #fefefe; 
 }
 
 .on {
@@ -71,6 +72,13 @@
     background: black;
 }
 
+.x {
+    display: none;
+}
+._ {
+    display: none;
+}
+
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
@@ -79,4 +87,49 @@
 @keyframes slideDown {
     0% { max-height: 0; }
     100% { max-height: fit-content; }
+}
+
+@media (orientation: portrait) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        font-size: 4.5rem;
+        padding: 17% 0; 
+        height: 100vh;
+        justify-content: flex-start;
+    }
+    .x {
+        display: block;
+        position: absolute;
+        top: -2%;
+        right: 6%;
+        transform: scaleX(1.5);
+        font-size: 7rem; 
+    }
+    .x:hover {
+        background: #fefefe;
+    }
+    ._ {
+        display: block;
+        position: absolute;
+        bottom: -2%;
+        right: 6%;
+        /* top: 25%;
+        left: 26%; */
+        line-height: .5;
+        transform: scaleX(3.5);
+        font-size: 4rem;
+        font-weight: 600;
+        color: rgb(0,0,0);
+    }
+    ._:hover {
+        background: #fefefe;
+    }
+    .navBtn {
+        padding: 6% 0;
+    }
+    .navBtn:hover {
+        background: linear-gradient(45deg, #ca33cf, #61dafb);
+        color: #fefefe; 
+    }
 }

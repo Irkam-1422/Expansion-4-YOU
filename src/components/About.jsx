@@ -151,14 +151,8 @@ export const About = () => {
         <div style={{background: 'black', zIndex: '2', position: 'relative'}}>
           {abouts.map((about,i) => {
             return (
-              <div className={`${styles.cont} ${rotated ? styles[`rotateCont${i}`] : styles.transformNone}`} style={{position: 'relative', zIndex: `${i}`,flexDirection: i%2==0 ? 'row' : 'row-reverse', marginTop: i==0 ? '12%' : ''}}>
-                <h1 className={styles.h1} style={i%2==0?{}:{transform: 'rotate(90deg)'}} ref={i==0?title0:i==1?title1:i==2?title2:title3}>{titles[i]}</h1> 
-                {/* 
-                transform: rotate(90deg) translate(30%);
-                transform: rotate(-90deg) translate(-15%);
-                transform: rotate(90deg) translate(-3%);
-                transform: rotate(-90deg) translate(18%)
-                */}
+              <div className={`${styles.cont} ${rotated ? styles[`rotateCont${i}`] : styles.transformNone}`} style={{position: 'relative', zIndex: `${i}`,flexDirection: window.innerHeight>window.innerWidth ? 'column' : i%2==0 ? 'row' : 'row-reverse', marginTop: i==0 ? '12%' : ''}}>
+                <h1 className={styles.h1} style={window.innerHeight>window.innerWidth?{transform: 'none'}:i%2==0?{}:{transform: 'rotate(90deg)'}} ref={i==0?title0:i==1?title1:i==2?title2:title3}>{titles[i]}</h1> 
                 <Step about={about}/>
               </div>
             )

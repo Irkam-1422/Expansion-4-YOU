@@ -27,8 +27,20 @@ export const Overview = () => {
 
   return (
     <div className={`${styles.overviewCont} container`}>
-        <div className={`${styles.title1} ${animStyles.hiddenLeft}`} ref={title1}>Oh, wait!</div>
-        <div  id='overview' className={`${styles.title2} ${animStyles.hiddenLeft}`} ref={title2}>Just a quick warning before we start...</div>
+        <div className={`${styles.title1} ${animStyles.hiddenLeft}`} ref={title1}>
+          {/*     font-size: 5rem; */}
+          Oh, wait!
+        </div>
+        <div  id='overview' className={`${window.innerHeight>window.innerWidth?'':styles.title2} ${animStyles.hiddenLeft}`} ref={title2}>
+          {window.innerHeight>window.innerWidth?
+          <>
+            <div className={styles.title2}>Just a quick warning</div> 
+            {/* font-size: 5rem;
+    margin-top: 2rem; */}
+            <div className={styles.title2} style={{marginLeft: '20rem'}}>before we start...</div>
+          </>
+          :'Just a quick warning before we start...'}
+        </div>
         <div className={`${styles.textCont} ${animStyles.hiddenOp}`} ref={text}>
             <span>Beware, boosting your digital marketing strategy can <span className={styles.span}>attract new customers significantly</span>.</span> <br />
             <span>This can cause <span className={styles.span}>severe growth</span> of your <span className={styles.span}>revenue</span> and <span className={styles.span}>customer loyality</span>. </span><br />

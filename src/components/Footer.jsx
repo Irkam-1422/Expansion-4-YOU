@@ -30,17 +30,18 @@ export const Footer = () => {
 
   return (
     <div className={styles.footerCont} id='footer'>
-        {/* z-index: -1;
-    margin-top: -3vh; */}
         <div className={styles.textAndLogo}>
             <div className={styles.logo}></div>
+            {/*     width: 44%; */}
             <div className={styles.text}>
+                {/*     width: 64%; */}
             We talented digitalmarketeers who are passionate about delivering exceptional highly customised results to our clients across the globe through innovative approaches. 
             <br /><br />
             We firmly believe that there is a better way to do this things – DIGITAL!
             </div>
         </div>
-        <div className={styles.cont}>
+        <div className={styles.linksAndContact}>
+        <div className={`${styles.cont} ${styles.links}`}>
             <h1 className={styles.h1}>Quick Links</h1>
             <Link to='/'>
                 <div className={styles.navbtn} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -68,7 +69,7 @@ export const Footer = () => {
                 </div>
             </Link>
         </div>
-        <div className={styles.cont}>
+        <div className={`${styles.cont} ${styles.contacts}`}>
             <h1 className={styles.h1}>Connect</h1>
             <div className="">+31638471411</div>
             <div className="">info@expansion4you.nl</div>
@@ -78,7 +79,8 @@ export const Footer = () => {
                 <div className={styles.facebook}></div>
             </div>
         </div>
-        <form onSubmit={sendEmail} className={styles.cont}>
+        </div>
+        <form onSubmit={sendEmail} className={`${styles.cont} ${styles.form}`}>
             <h1 className={styles.h1}>Drop Us an Email!</h1>
             <input className={styles.input} type="text" name='from_name'  placeholder='Name'/>
             <input className={styles.input}  type="text" name='from_email'  placeholder='Email'/>

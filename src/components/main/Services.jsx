@@ -143,12 +143,12 @@ const handleSeaBack = () => {
 }
 
   return (
-    <div className={`${styles.servicesCont} container`} id='services'>
+    <div className={`${styles.servicesCont} container`} id='services' style={window.innerHeight>window.innerWidth?{height: 'auto'}:{}}>
       <div className="">
-        <div className={`${styles.title1} {styles.titleServices}`} ref={title} >Wanna know more about what we do?</div>
+        <div className={`${styles.title1} ${styles.titleServices}`} ref={title} >Wanna know more about what we do?</div>
       </div>
       <div className={styles.services}>
-        <div className="sma" ref={sma} style={{transition: 'all 1s'}}> 
+        <div className={styles.servicewrapWrap} ref={sma} style={{transition: 'all 1s'}}> 
         <div className={styles.serviceWrap} ref={smaWrap} onClick={handleSmaClick}>
           <img className={styles.imgService} src={require('../../assets/SMA.jpg')} alt="" />
         </div>
@@ -157,25 +157,16 @@ const handleSeaBack = () => {
             <span className={styles.notePink} style={{opacity: 0}} ref={smaAll} onClick={handleSmaBak}> <br /> ALL SERVICES</span> 
           </div>
         </div> 
-        <div className={styles.serviceHidden} ref={smaHidden}>
-         <SMA/> 
-        </div>
-        <div className={styles.serviceHidden} ref={seoHidden}>
-          <SEO/>
-        </div>
-        <div className={styles.serviceHidden} ref={seaHidden}>
-          <SEA/> 
-        </div>
         <div className={styles.middleDiv} ref={seo} style={{transition: 'all 1s'}}>
-          <div className={styles.serviceWrap} ref={seoWrap} onClick={handleSeoClick}>
+          <div className={`${styles.serviceWrap} ${styles.seoWrap}`} ref={seoWrap} onClick={handleSeoClick}>
             <img className={styles.imgService} src={require('../../assets/SEO.jpg')} alt="" />
           </div>
-          <div className={`${styles.servicesText} ${styles.seo}`} ref={seoText}>
+          <div className={`${styles.servicesText} ${styles.seoText}`} ref={seoText}>
             SEARCH ENGINE OTIMIZATION
             <span className={styles.notePink} style={{opacity: 0}} ref={seoAll} onClick={handleSeoBack}> <br /> ALL SERVICES</span>
           </div>
         </div>
-        <div className="sea" ref={sea} style={{transition: 'all 1s'}}>
+        <div className={styles.servicewrapWrap} ref={sea} style={{transition: 'all 1s'}}>
           <div className={styles.serviceWrap} ref={seaWrap} onClick={handleSeaClick}> 
             <img className={styles.imgService} src={require('../../assets/SEA.jpg')} alt="" />
           </div>

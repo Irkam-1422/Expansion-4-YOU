@@ -28,10 +28,10 @@ export const Header = ({returnReverted, returnFeedback}) => {
       if (logo.current) logo.current.classList.remove(`${styles.hidden}`)
     } 
 
-    if (window.scrollY > height*2) {
+    if (window.innerHeight < window.innerWidth && window.scrollY > height*2) {
       if (revert) revert.classList.add(`${animStyles.revert}`)
       returnReverted(true)
-    } else if (window.scrollY < height) {
+    } else if (window.innerHeight < window.innerWidth && window.scrollY < height) {
       if (revert) revert.classList.remove(`${animStyles.revert}`)
       returnReverted(false)
     }
@@ -50,22 +50,42 @@ export const Header = ({returnReverted, returnFeedback}) => {
         }, 1000);
       }
     } 
-    if (window.scrollY < height*3) {
+    if (window.innerHeight<window.innerWidth) {
+      if (window.scrollY < height*3) {
       
-      if (footer) footer.style.display = 'none'
-
-      if (feedback) {
-        feedback.style.background = 'black'
-        setTimeout(() => {
-          feedback.style.height = '200%'
-          feedback.style.zIndex = '500'
-        }, 1000);
+        if (footer) footer.style.display = 'none'
+  
+        if (feedback) {
+          feedback.style.background = 'black'
+          setTimeout(() => {
+            feedback.style.height = '200%'
+            feedback.style.zIndex = '500'
+          }, 1000);
+        }
       }
-    }
-    if (window.scrollY > height*4.5) {
-      if (footer) footer.style.zIndex = '3'
+      if (window.scrollY > height*4.5) {
+        if (footer) footer.style.zIndex = '3'
+      } else {
+        if (footer) footer.style.zIndex = '-1'
+      }
     } else {
-      if (footer) footer.style.zIndex = '-1'
+      if (window.scrollY < height*2.5) {
+      
+        if (footer) footer.style.display = 'none'
+  
+        if (feedback) {
+          feedback.style.background = 'black'
+          setTimeout(() => {
+            feedback.style.height = '200%'
+            feedback.style.zIndex = '500'
+          }, 1000);
+        }
+      }
+      if (window.scrollY > height*5.7) {
+        if (footer) footer.style.zIndex = '3'
+      } else {
+        if (footer) footer.style.zIndex = '-1'
+      }
     }
   };
 
@@ -89,7 +109,7 @@ export const Header = ({returnReverted, returnFeedback}) => {
         opacity: `100%`,
         keyframes: [
         {color: 'rgba(0,0,0,0)'},
-        {color: '#642066', 
+        {color: '#fefefe', 
         },
         ] 
     }) 
@@ -110,12 +130,7 @@ export const Header = ({returnReverted, returnFeedback}) => {
         <div className={styles.header}>
             <div className="" ref={title}>
             <h1 className={`${styles.title} title`}>IGNITE YOUR BUSINESS GROWTH</h1>
-                <div className={`${styles.text} text`} style={{fontSize: '1.2rem'}}>
-                  {/* font-size: 1.2rem; noteBlue
-    color: #642066;
-    opacity: 1;
-    background: rgb(254, 254, 254);
-    padding: 0.5vw 1vw; */}
+                <div className={`${styles.text} text`}>
                     Do you wanna talk about digital marketing?
                 </div>
             </div>

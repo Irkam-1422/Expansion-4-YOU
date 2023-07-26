@@ -6,12 +6,7 @@ import { Link } from 'react-router-dom'
 const links = ['/','/services','/about','/work','/contact']
 const btns = ['Who Are We?','What Do We Offer?','Wana Know More About Us?','How Do We Work?','Want To Contact Us?']
  
-const home = [
-  {text: 'Why shouldn`t you work with us', id: 'overview'},
-  {text: 'About us', id: 'about'},
-  {text: 'Our services', id: 'services'},
-  {text: 'Feedback from our clients', id: 'feedback'},
-  ]
+const home = []
 const services = []
 const about = []
 const work = []
@@ -19,8 +14,7 @@ const contact = []
 
 export const Navigation = () => {
 
-  const animation = useRef(null);
-  const hoverAnime = useRef(null) 
+  const menu = useRef(null) 
   const [open,setOpen] = useState([])
   const [page,setPage] = useState(null)
 
@@ -47,9 +41,25 @@ export const Navigation = () => {
       setOpen(contact)
     } 
   }
-  
-  const handleClick = (e) => {
-      console.log(e.target.id) 
+
+  const handleClick = (i) => {
+    setPage(i)
+    menu.current.style.transform = 'translateY(-95%)'
+  }
+
+  const handleCloseMenu = (e) => {
+    if (menu.current) {
+      menu.current.style.transform = 'translateY(-95%)'
+      e.target.style.background = 'transparent'
+    }
+  }
+
+  const handleOpenMenu = (e) => {
+    if (menu.current) {
+      console.log('opening');
+      menu.current.style.transform = 'none'
+      e.target.style.background = 'transparent'
+    }
   }
 
   return (
@@ -57,26 +67,15 @@ export const Navigation = () => {
     className={styles.navCont}
     onMouseLeave={() => setOpen([])}
     >
-      <div className={`${styles.menu} buttons`}>
+      <div className={`${styles.menu} buttons`} ref={menu}> 
+          {window.innerHeight>window.innerWidth && <div className={`${styles.navBtn} ${styles.x}`} onClick={handleCloseMenu}>x</div> }
+          {window.innerHeight>window.innerWidth && <div className={`${styles.navBtn} ${styles._}`} onClick={handleOpenMenu}>- <br />- <br />- <br /></div> }
           {btns.map((btn,i) => <Link to={`${links[i]}`}><div key={i} 
                                     id={i} 
                                     className={page == i ? `${styles.navBtn} _${i} ${styles.hover}` : `${styles.navBtn} _${i}`}
                                     onMouseEnter={handleHover} 
-                                    onClick={() => setPage(i)}
+                                    onClick={handleClick} 
                                     >{btn}</div></Link>)} 
-      </div>
-      <div className={styles.btnCont}>
-      {open.map((btn,i) => <div className={`${styles.menu} 
-                                ${styles.on}`} 
-                                //top: `${(i+1)*3.5}vw`, 
-                                style={{position:'relative',borderBottom: '1px solid'}}
-                                >
-                                  <div className={`${styles.navBtn} _${i} ${styles.onBtn}`} style={{color: '#fefefe'}}>
-                                    <a href={`#${btn.id}`} style={{color: 'white'}}>
-                                      {btn.text}
-                                    </a>
-                                  </div>
-                                </div>)}
       </div>
     </div>
   )

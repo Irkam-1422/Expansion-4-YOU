@@ -83,7 +83,8 @@
     margin-bottom: 1vh;
     outline: none;
     border: none;
-    border-bottom: 1px solid #642066;      
+    border-bottom: 1px solid #642066; 
+    background: transparent;     
 }
 
 .input::placeholder {
@@ -109,4 +110,49 @@
 .navbtn:hover {
     color: #8f2e92;
     cursor: pointer;
+}
+
+@media (orientation: portrait) {
+    .footerCont {
+        bottom: 0;
+        flex-direction: column;
+        top: auto;
+    }
+    .textAndLogo {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .logo {
+        width: 30%;
+        height: 17vh;
+        background-repeat: no-repeat; 
+        width: 44%;
+    }
+    .text {
+        font-size: 2.5rem;
+        text-align: end;
+        margin-left: 5%;
+        width: 30%;
+        width: 64%;
+    }
+    .linksAndContact {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .cont {
+        font-size: 2.7rem;
+    }
+    .links {
+        margin-left: 2%;
+    }
+    .contacts {
+        margin-left: 15%;
+    }
+    .h1 {
+        font-size: 3.5rem;
+    }
+    .submit {
+        font-size: 3.5rem;
+    }
 }

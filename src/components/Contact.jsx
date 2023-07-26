@@ -84,11 +84,13 @@ export const Contact = () => {
                     rows="4" 
                     placeholder='Your message'
                     ></textarea>
+          <div className={styles.submit}>
           <input type="submit" 
                  value="Send Email" 
-                 className={`${styles.input} ${styles.submit}`}
+                 className={`${styles.input} ${styles.submitInp}`}
                  ref={submit}
                  onClick={handleClick} />
+          </div>
         </form>
       </div>
     </div>

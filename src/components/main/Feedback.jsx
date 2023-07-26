@@ -31,12 +31,16 @@ export const Feedback = ({feedback}) => {
             </div>
         </div>
         <div style={{width: '100%'}}>
-            <div className={styles.feedbackTitles} ref={titleCont} id='feedback'>
-                <div className={`${styles.title1} ${styles.titleSmall}`} ref={title1}>Still not sure about working with us?</div>
-                <div className={`${styles.title2} ${styles.titleSmall}`} ref={title2}>Let's see what our clients say!</div>
+            <div className={styles.feedbackTitles} ref={titleCont} id='feedback' style={window.innerHeight>window.innerWidth?{height: '0'}:{}}>
+                <div className={`${styles.title1} ${styles.titleSmall}`} ref={title1} style={window.innerHeight>window.innerWidth?{fontSize: '3.7rem'}:{}}>Still not sure about working with us?</div>
+                {/* font-size: 3rem;
+    background: black;
+    color: #fefefe;
+    margin-left: 0; */}
+                <div className={`${styles.title2} ${styles.titleSmall}`} ref={title2} style={window.innerHeight>window.innerWidth?{fontSize: '3.7rem'}:{}}>Let's see what our clients say!</div>
             </div>
             <div className={styles.feedbackTextCont}>
-                <div className={styles.feedback} style={{marginTop: '-12vh'}}>
+                <div className={styles.feedback} style={window.innerHeight>window.innerWidth?{marginTop: '10%'}:{marginTop: '-12vh'}}>
                     <div className={styles.fbText} ref={text1}>
                         I worked with Anna and she always gives 100% to achieve the best results 
                         for her clients. Because of her extensive experience, 
@@ -45,16 +49,12 @@ export const Feedback = ({feedback}) => {
                     </div>
                     <div className={`${styles.noteBlue} ${styles.author1}`}>Bas Uding</div>
                 </div>
-                <div className={`${styles.feedback}`} style={{marginTop: '-20vh'}}>
+                <div className={`${styles.feedback}`} style={window.innerHeight>window.innerWidth?{marginTop: '15%'}:{marginTop: '-20vh'}}>
                     <div className={styles.fbText} ref={text2}>
                         Adaptable online marketing strategies for different market needs. 
                         Very knowledgeable and lot's of personal attention.
                     </div>
                     <div className={`${styles.notePink} ${styles.author2}`}>Jet Martens</div>
-                    {/*     background: #642067;
-    color: #fefefe;
-    padding: 0.5vw 2vw; 
-    left: 7vw; */}
                 </div>
             </div>
         </div>

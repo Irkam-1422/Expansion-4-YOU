@@ -33,9 +33,9 @@
 
 .mailImg {
     background-image: url('../assets/contact_icons.png');
-    width: 2vw;
-    height: 2vw;
-    background-size: 9vw;
+    width: 2vh;
+    height: 2vh;
+    background-size: 9vh;
     background-position: 0;
     display: inline-block;
     margin-top: 1vh;
@@ -108,10 +108,10 @@
     color: black; 
 }
 ._img2 {
-    background-position-x: -2.4vw;
+    background-position-x: -2.4vh;
 }
 ._img3 {
-    background-position-x: -4.8vw; 
+    background-position-x: -4.8vh; 
 }
 .h1 {
     text-transform: uppercase;
@@ -175,4 +175,65 @@
     height: 100vh;
     z-index: -2;
     opacity: .5;
+}
+
+@media (orientation: portrait) {
+    .pageCont {
+        display: flex;
+        flex-direction: column;
+        height: 120vh;
+    }
+    .imgCont {
+        padding: 10vh 4vw;
+        padding-right: 14vw;
+    }
+    .imgText {
+        font-size: 3rem;
+    }
+    .infoText {
+        position: relative;
+        left: 35vw;
+        top: -1vh;
+        font-size: 2.5rem;
+        color: black;
+    }
+    .cover {
+        display: none;
+    }
+    .h1 {
+        font-size: 6rem;
+    }
+    .hr {
+        background: linear-gradient(45deg, #de30e4, #3cfaff);
+        height: 3px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+    }
+    .input {
+        border: none;
+        margin-top: 2vh;
+        padding: 0.5vw 1vw;
+        outline: none;
+        background: transparent;
+        border-bottom: 1px solid;
+        color: #fefefe;
+        font-size: 2.7rem; 
+    }
+    .input::placeholder {
+        color: #fefefe;
+    }
+    .submit {
+        background: linear-gradient(45deg, #de30e4, #3cfaff);
+        border: none;
+        height: fit-content;
+        padding: 0; 
+    }
+    .submitInp {
+        width: 100%;
+        border-radius: 20px;
+        font-size: 4rem;
+        margin: 0;
+        border: 1px solid; 
+    }
 }

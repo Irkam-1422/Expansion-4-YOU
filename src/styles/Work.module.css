@@ -175,4 +175,7 @@
         flex: 60%;
         height: 39vw;
     }
+    .btn {
+        font-size: 4rem;
+    }
   }
