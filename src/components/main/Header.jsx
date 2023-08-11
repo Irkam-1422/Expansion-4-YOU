@@ -3,7 +3,7 @@ import styles from '../../styles/Main.module.css'
 import animStyles from '../../styles/Animation.module.css'
 import anime from "animejs/lib/anime.es.js"
 
-export const Header = ({returnReverted, returnFeedback}) => {
+export const Header = ({returnReverted, returnFeedback, content}) => {
 
   const title =  useRef(null)
   const logo =  useRef(null)
@@ -81,7 +81,7 @@ export const Header = ({returnReverted, returnFeedback}) => {
           }, 1000);
         }
       }
-      if (window.scrollY > height*5.7) {
+      if (window.scrollY > height*8) {
         if (footer) footer.style.zIndex = '3'
       } else {
         if (footer) footer.style.zIndex = '-1'
@@ -129,9 +129,9 @@ export const Header = ({returnReverted, returnFeedback}) => {
         <div className={styles.logo} ref={logo}></div>
         <div className={styles.header}>
             <div className="" ref={title}>
-            <h1 className={`${styles.title} title`}>IGNITE YOUR BUSINESS GROWTH</h1>
+            <h1 className={`${styles.title} title`}>{content[0]}</h1>
                 <div className={`${styles.text} text`}>
-                    Do you wanna talk about digital marketing?
+                    {content[1]}
                 </div>
             </div>
         </div>

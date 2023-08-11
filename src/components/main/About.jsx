@@ -3,7 +3,7 @@ import styles from '../../styles/Main.module.css'
 import animStyles from '../../styles/Animation.module.css'
 
 import {observer} from '../../observers.js'
-export const About = ({reverted}) => {
+export const About = ({reverted,content}) => {
 
   const title1 = useRef(null)  
   const image = useRef(null)  
@@ -45,25 +45,59 @@ export const About = ({reverted}) => {
         {/* style={window.innerHeight>window.innerWidth?{height: 'auto'}:{}} */}
         <div className={styles.revert}>
                 <div className={styles.aboutCont}>
-                    <div className={window.innerHeight>window.innerWidth?styles.title1:`${styles.title1} ${animStyles.hiddenLeft}`} styles={{transform: 'none'}} ref={title1} id='about'>So, what is it all about?</div>
+                    <div className={window.innerHeight>window.innerWidth?styles.title1:`${styles.title1} ${animStyles.hiddenLeft}`} styles={{transform: 'none'}} ref={title1} id='about'>{content[0][0]}</div>
                     <div className={styles.imgCont}>
                         <div className={window.innerHeight>window.innerWidth?styles.imgWrap:`${styles.imgWrap} ${animStyles.hiddenLeft}`} ref={image} style={{transition: 'all 1s'}}>
                             <img className={styles.img} src={require('../../assets/founder.jpg')} alt="founder" />
                         </div>
                         <div className={window.innerHeight>window.innerWidth?styles.aboutText:`${styles.aboutText} ${animStyles.hiddenLeft}`} ref={text1} style={{transition: 'all 1s'}}>
-                            <div style={{background: '#fefefe', padding: '4%'}}>"Here at Expansion 4you we deliver <span className={styles.underlineBlue}>exceptional digital marketing solutions</span> that drive <span className={styles.underlineBlue}>measurable results</span>.</div>
-                            <div style={{background: '#fefefe', padding: '4%'}}>We strive to provide <span className={styles.underlineBlue}>customized strategies</span> and <span className={styles.underlineBlue}>cutting-edge techniques</span> that enhance brand visibility, generate high-quality leads, and maximize our clients' return on investment."</div>
-                            <div className={styles.founder} style={{background: '#fefefe', padding: '4%'}}>ANNA ZNAIEVSKA - UDING, <br /> Founder/ Online Marketer</div>
+                            <div style={{background: '#fefefe', padding: '4%'}}>
+                                "{content[1][0]}
+                                <span className={styles.underlineBlue}>
+                                {content[1][1]}
+                                </span> 
+                                {content[1][2]}
+                                <span className={styles.underlineBlue}>
+                                {content[1][3]}
+                                </span>
+                                </div>
+                            <div style={{background: '#fefefe', padding: '4%'}}>
+                            {content[2][0]} 
+                                <span className={styles.underlineBlue}>
+                                {content[2][1]}
+                                </span> 
+                                {content[2][2]} 
+                                <span className={styles.underlineBlue}>
+                                {content[2][3]}
+                                </span> 
+                                {content[2][4]}"
+                                </div>
+                            <div className={styles.founder} style={{background: '#fefefe', padding: '4%'}}>
+                            {content[3][0]} <br /> 
+                            {content[3][1]}
+                            </div>
                         </div> 
                     </div>
                 </div>
                 <div className={window.innerHeight>window.innerWidth?styles.simpleCont:`${styles.simpleCont} ${animStyles.hiddenRight}`} ref={text2} style={{transition: 'all 1s'}}>
-                    <div className={window.innerHeight>window.innerWidth?`${styles.title2} ${styles.simpleTitle}`:`${styles.title2} ${styles.simpleTitle} ${animStyles.hiddenRight}`} ref={title2} style={{transition: 'all 1s'}}>Well, In simple terms:</div>
+                    <div className={window.innerHeight>window.innerWidth?`${styles.title2} ${styles.simpleTitle}`:`${styles.title2} ${styles.simpleTitle} ${animStyles.hiddenRight}`} ref={title2} style={{transition: 'all 1s'}}>
+                    {content[4][0]}
+                    </div>
                     <div className='{animStyles.hiddenOp}'>
-                    <div className="">We take in our hands all your problems about <span className={styles.underlinePink}>creating your digital content,</span></div>
+                    <div className="">
+                    {content[5][0]}
+                        <span className={styles.underlinePink}>
+                        {content[5][1]}
+                        </span></div>
                         <div className="">
-                            So now, you'll never have to worry about <span className={styles.underlinePink}>what to post on social media</span>, <br />
-                            or how to make your company's website to <span className={styles.underlinePink}>pop up first during a google search</span>!
+                        {content[5][2]}
+                            <span className={styles.underlinePink}>
+                            {content[5][3]}
+                            </span> <br />
+                            {content[5][4]}
+                            <span className={styles.underlinePink}>
+                            {content[5][5]}
+                            </span>
                         </div> 
                     </div>
                 </div>

@@ -8,7 +8,7 @@ import { Services } from './main/Services';
 import { Feedback } from './main/Feedback';
 import { Footer } from './Footer';
  
-export const Main = () => {
+export const Main = ({page}) => {
 
   const fadeInAnime = useRef(null); 
   const [reverted,setReverted] = useState(false)
@@ -37,14 +37,17 @@ export const Main = () => {
   //     })
 
   // },[])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  },[])
 
   return (
     <div id='Home'>
-        <Header returnReverted={(cond) => setReverted(cond)} returnFeedback={(cond) => setFeedback(cond)}/> 
-        <Overview/>
-        <Welcoming reverted={reverted}/>
-        <Services/> 
-        <Feedback feedback={feedback}/>
+        <Header content={page.components[0].content} returnReverted={(cond) => setReverted(cond)} returnFeedback={(cond) => setFeedback(cond)}/> 
+        <Overview content={page.components[1].content}/>
+        <Welcoming content={page.components[2].content} aboutContent={page.components[3].content} reverted={reverted}/>
+        <Services content={page.components[4].content}/> 
+        <Feedback content={page.components[5].content} feedback={feedback}/>
         <div className="container">
           <Footer/>
         </div>

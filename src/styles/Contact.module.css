@@ -80,6 +80,11 @@
     color: #642066;
     text-align: initial;
     font-size: 1.7vw;
+
+    background: linear-gradient(45deg, #642067, #1381ae);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .formCont {
@@ -90,6 +95,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    background: linear-gradient(45deg, rgb(202, 51, 207), #5dcbf8);
 }
 
 .form {
@@ -106,6 +113,7 @@
     top: -3vh;
     font-size: 1.5vw;
     color: black; 
+    -webkit-text-fill-color: black;
 }
 ._img2 {
     background-position-x: -2.4vh;
@@ -150,6 +158,8 @@
     left: 0;
     transition: all 1s;
     z-index: 0;
+
+    background: linear-gradient(45deg, rgb(202, 51, 207), #5dcbf8);
 }
 
 .submit {
@@ -161,10 +171,19 @@
     margin-top: 4vh;
     cursor: pointer;    
     transition: all .5s;
+
+    background: #64206691;
 }
 
 .submit:hover {
     background: #fefefe26;
+}
+
+.submitInp {
+    margin: 0;
+        background: transparent;
+        color: #fefefe;
+        font-size: 1.4rem;
 }
 
 .people {
@@ -209,6 +228,7 @@
         outline: none;
         border: none;
         border-radius: 5px;
+        border: 2px solid #642066a8;
     }
     .input {
         border: none;

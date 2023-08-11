@@ -6,7 +6,7 @@ import { Contact } from '../services/Contact'
 import {observer} from '../../observers.js'
 import { ContactImgBtn } from '../contact/ContactImgBtn'
 
-export const Welcoming = ({reverted}) => {
+export const Welcoming = ({reverted,content,aboutContent}) => {
 
   const title1 = useRef(null)
   const title2 = useRef(null)
@@ -37,25 +37,25 @@ export const Welcoming = ({reverted}) => {
           <div className={`${styles.title1} ${animStyles.hiddenLeft} ${styles.titlePink}`} 
               ref={title1}
               style={{margin: '0', marginLeft: '-3vw' }}
-              >Well...</div>
+              >{content[0][0]}</div>
           <div className={`${styles.title2} ${animStyles.hiddenLeft} ${styles.titlePink} `} 
               ref={title2}
               style={{marginTop: '1vh', marginLeft: '0' }}
-              >If you didn't stop now...</div>
+              >{content[1][0]}</div>
           <div className={animStyles.hiddenOp} ref={contact} style={{transition: 'all 1s'}}>
             <ContactImgBtn/> 
           </div>
         </div>
         <div className={`${styles.text2Cont}`} ref={text1} style={{position: 'static', marginLeft: '0' }}>
-            We guess, <br />  
-            you are brave enough <br />
-            to dive into <br /> 
-            <span style={{transition: 'all 2s'}} className={`${styles.span1} ${animStyles.hiddenGrow}`} ref={digital}>Digital</span>
-            <span style={{transition: 'all 2s'}} className={`${styles.span2} ${animStyles.hiddenGrow}`} ref={marketing}>Marketing</span> 
-            <span className={`${styles.span3}`} ref={text2}>content!</span>
+            {content[2][0]} <br />  
+            {content[2][1]} <br />
+            {content[2][2]} <br /> 
+            <span style={{transition: 'all 2s'}} className={`${styles.span1} ${animStyles.hiddenGrow}`} ref={digital}>{content[2][3]}</span>
+            <span style={{transition: 'all 2s'}} className={`${styles.span2} ${animStyles.hiddenGrow}`} ref={marketing}>{content[2][4]}</span> 
+            <span className={`${styles.span3}`} ref={text2}>{content[2][5]}</span>
         </div>
     </div>
-    <About reverted={reverted} />
+    <About reverted={reverted} content={aboutContent}/>
     </>
   )
 }

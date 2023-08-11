@@ -9,6 +9,7 @@ import { SocialMediaAdvertising } from './SocialMediaAdvertising'
 import { WebDevelopment } from './WebDevelopment'
 import { SearchEngineOptimization } from './SearchEngineOptimization'
 import { Link } from 'react-router-dom'
+import { Page } from '../Page'
 
 export const InsideService = ({closeModal,i}) => {
 
@@ -41,24 +42,13 @@ export const InsideService = ({closeModal,i}) => {
         <div className={styles.back} onClick={handleClick}> 
             {'<'}<div className={styles.backDash}>-</div> Back
         </div>
-        {i==0 ? <MarketingStrategy/>:
-        i==1 ? <ECommerce /> : 
-        i==2 ? <Branding /> : 
-        i==3 ? <SearchEngineAdvertising /> : 
-        i==4 ? <SocialMediaAdvertising /> : 
-        i==5 ? <WebDevelopment /> : 
-        <SearchEngineOptimization />}
-        {/* <div className={styles.back}> 
-            <Link to="/">Home</Link> <div className={styles.backDash} 
-                     style={{left: '0.5vw',marginLeft: '0.5vw'}}>-</div>{'>'} <span onClick={handleClick}>Srvices</span> <div className={styles.backDash} 
-                        style={{left: '0.5vw',marginLeft: '0.5vw'}}>-</div>{'>'} <span onClick={() => window.scrollBy(0, -50)}>{i==0 ? 'Marketing Strategy' :
-                        i==1 ? 'E-Commerce' : 
-                        i==2 ? 'Branding' : 
-                        i==3 ? 'Search Engine Advertising' : 
-                        i==4 ? 'Social Media Advertising' : 
-                        i==5 ? 'Web Development' : 
-                        'Search Engine Optimization'}</span>
-        </div> */}
+        {i==0 ? <Page component={<MarketingStrategy/>} name={'marketingstrategy'}/>:
+        i==1 ? <Page component={<ECommerce />} name={'ecommerce'}/> : 
+        i==2 ? <Page component={<Branding />} name={'branding'}/> :  
+        i==3 ? <Page component={<SearchEngineAdvertising />} name={'searchengineadvertising'}/> : 
+        i==4 ? <Page component={<SocialMediaAdvertising />} name={'socialmediaadvertising'}/> : 
+        i==5 ? <Page component={<WebDevelopment />} name={'webdevelopment'}/> : 
+        <Page component={<SearchEngineOptimization />} name={'searchengineoptimisation'}/>}
     </div>
   )
 }

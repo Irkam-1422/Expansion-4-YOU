@@ -3,7 +3,7 @@ import styles from '../../styles/Main.module.css'
 import animStyles from '../../styles/Animation.module.css'
 import {observer} from '../../observers.js'
 
-export const Feedback = ({feedback}) => {
+export const Feedback = ({content}) => {
 
   const titleCont = useRef(null)  
   const title1 = useRef(null)
@@ -32,29 +32,33 @@ export const Feedback = ({feedback}) => {
         </div>
         <div style={{width: '100%'}}>
             <div className={styles.feedbackTitles} ref={titleCont} id='feedback' style={window.innerHeight>window.innerWidth?{height: '0'}:{}}>
-                <div className={`${styles.title1} ${styles.titleSmall}`} ref={title1} style={window.innerHeight>window.innerWidth?{fontSize: '3.7rem'}:{}}>Still not sure about working with us?</div>
+                <div className={`${styles.title1} ${styles.titleSmall}`} ref={title1} style={window.innerHeight>window.innerWidth?{fontSize: '3.7rem'}:{}}>
+                    {content[0][0]}
+                </div>
                 {/* font-size: 3rem;
     background: black;
     color: #fefefe;
     margin-left: 0; */}
-                <div className={`${styles.title2} ${styles.titleSmall}`} ref={title2} style={window.innerHeight>window.innerWidth?{fontSize: '3.7rem'}:{}}>Let's see what our clients say!</div>
+                <div className={`${styles.title2} ${styles.titleSmall}`} ref={title2} style={window.innerHeight>window.innerWidth?{fontSize: '3.7rem'}:{}}>
+                    {content[0][1]}
+                </div>
             </div>
             <div className={styles.feedbackTextCont}>
                 <div className={styles.feedback} style={window.innerHeight>window.innerWidth?{marginTop: '10%'}:{marginTop: '-12vh'}}>
                     <div className={styles.fbText} ref={text1}>
-                        I worked with Anna and she always gives 100% to achieve the best results 
-                        for her clients. Because of her extensive experience, 
-                        analytical skills, creativity and passion she delivers a successful 
-                        online marketing strategy every time.
+                    {content[1][0]}
                     </div>
-                    <div className={`${styles.noteBlue} ${styles.author1}`}>Bas Uding</div>
+                    <div className={`${styles.noteBlue} ${styles.author1}`}>{
+                    content[1][1]}
+                    </div>
                 </div>
-                <div className={`${styles.feedback}`} style={window.innerHeight>window.innerWidth?{marginTop: '15%'}:{marginTop: '-20vh'}}>
+                <div className={`${styles.feedback}`} style={window.innerHeight>window.innerWidth?{marginTop: '15%'}:{alignSelf: 'center'}}>
                     <div className={styles.fbText} ref={text2}>
-                        Adaptable online marketing strategies for different market needs. 
-                        Very knowledgeable and lot's of personal attention.
+                    {content[2][0]}
                     </div>
-                    <div className={`${styles.notePink} ${styles.author2}`}>Jet Martens</div>
+                    <div className={`${styles.notePink} ${styles.author2}`}>
+                    {content[2][1]}
+                    </div>
                 </div>
             </div>
         </div>

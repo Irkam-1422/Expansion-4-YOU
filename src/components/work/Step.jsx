@@ -37,7 +37,7 @@ export const Step = ({step,i}) => {
         <div className={styles.info}> 
             <h1 className={styles.h1} style={i%2==0 ? {} : {textAlign: 'initial'}}>{step.title}</h1>
             <div className={styles.text} style={i%2==0 ? {} : {textAlign: 'initial'}}> 
-              {step.text.map((text,i) => <span className={i%2==0 ? '' : styles.underline}>{text}</span>)} 
+              {step.text.map((text,i) => <span className={i%2==0 ? '' : styles.underline}> {text.trim()} </span>)} 
               {/* style={i%2==0 ? {left: '-100%'} : {left: '100%'}} */}
             </div>
         </div> 

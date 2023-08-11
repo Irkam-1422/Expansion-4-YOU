@@ -25,6 +25,8 @@ export const Navigation = () => {
     location[location.length-1] == 'work' ?  setPage(3) :
     location[location.length-1] == 'contact' ?  setPage(4) :
     setPage(0)
+
+    //const data = 
   }, [])
 
   const handleHover = (e) => {
@@ -44,7 +46,9 @@ export const Navigation = () => {
 
   const handleClick = (i) => {
     setPage(i)
-    menu.current.style.transform = 'translateY(-95%)'
+    if (window.innerHeight>window.innerWidth) {
+      menu.current.style.transform = 'translateY(-95%)'
+    }
   }
 
   const handleCloseMenu = (e) => {

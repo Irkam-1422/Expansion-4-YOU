@@ -15,6 +15,7 @@
     width: 30vw;
     height: 19vw;
     z-index: -1;
+    background-repeat: no-repeat;
 }
 
 .header {
@@ -25,7 +26,7 @@
     position: fixed;
     top: -6vh;
     left: 62vw;
-    height: 85vh;
+    height: 94vh;
 }
 
 .title {
@@ -55,7 +56,6 @@
     /* background: yellow; */
     color: #642066;
     opacity: 1;
-    background: rgb(254, 254, 254);
     padding: 0.5vw 1vw; 
     margin-top: 1vh;
 }
@@ -121,6 +121,10 @@
     left: 9.2vw; 
     transform: scale(2.5);
     color: #8f2e92;
+
+    background: linear-gradient(45deg, #ca33cf, #61dafb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .remark {
@@ -186,6 +190,10 @@
     margin-bottom: -2.6vw;
     color: #642066;
     font-size: 3.5rem;
+
+    background: linear-gradient(45deg, #8f2e92, #5dcbf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .span2 {
     position: relative;
@@ -197,6 +205,11 @@
     text-transform: uppercase;
     color: #642066;
     font-size: 3.5rem;
+
+
+    background: linear-gradient(45deg, #8f2e92, #5dcbf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .span3 {
     position: relative;
@@ -265,10 +278,14 @@
     background: #fefefe;
     color: #000;
     border: 3px solid #642067;
+
+    background: linear-gradient(45deg, #ca33cf, #61dafb);
+    border: none;
+    padding: .5%;
 }
 
 .aboutText::before {
-    content: 'This is our Mission';
+    content: 'This is our Mission ';
     color: #642067;
     font-weight: 400;
     text-transform: uppercase;
@@ -276,15 +293,20 @@
     position: absolute;
     text-align: left;
     left: 0vw;
-    width: 6.3vw;
+    width: 8.3vw;
     margin-top: -10.3vw;
     opacity: .8;
     font-size: 1.5rem;
+
+    background: linear-gradient(45deg, #de30e4, #3cfaff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 } 
 
 .founder {
     font-weight: 400;
-    margin-top: 5vh;
+    /* margin-top: 5vh; */
     color: #642067;
 }
 
@@ -316,16 +338,31 @@
     font-weight: 400;
     width: 120%;
     left: -13vw;
+
+    background: linear-gradient(45deg, #de30e4, #3cfaff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 }
 
 .underlineBlue {
-    text-decoration: underline #8f2e92;
-    text-decoration-thickness: 2px;
+    /* text-decoration: underline #8f2e92;
+    text-decoration-thickness: 2px; */
+
+    background-repeat: no-repeat;
+        background-position: center bottom 1px;
+        background-size: 100% 2px;
+        background-image: linear-gradient(to right, #ca33cf, #5dcbf8);
 }
 
 .underlinePink {
-    text-decoration: underline #8f2e92;
-    text-decoration-thickness: 2px;
+    /* text-decoration: underline #8f2e92;
+    text-decoration-thickness: 2px; */
+
+    background-repeat: no-repeat;
+        background-position: center bottom 1px;
+        background-size: 100% 2px;
+        background-image: linear-gradient(to right, #ca33cf, #5dcbf8);
 }
 
 .titleBig {
@@ -346,6 +383,11 @@
     transform: none;
     z-index: 2;
     position: relative;
+
+    background: linear-gradient(45deg, #de30e4, #3cfaff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 }
 
 .services {
@@ -356,10 +398,21 @@
     padding-bottom: 3.9vw;
 }
 
+.servicewrapWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .serviceWrap {
     overflow: hidden;
     transition: all 1s;
     max-width: 29.3vw;
+
+    width: min-content;
+    background: linear-gradient(45deg, #de30e4, #3cfaff);
+    padding: 1%;
+    max-width: fit-content;
 }
 
 .serviceHidden {
@@ -375,7 +428,6 @@
 
 .imgService {
     width: 27.3vw;
-    border: 7px solid #642067;
 }
 
 .servicesText {
@@ -388,6 +440,13 @@
     background: transparent;
     color: rgb(254, 254, 254);
     padding: 0px;
+
+
+    background: linear-gradient(45deg, #de30e4, #3cfaff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: end;
 }
 
 .sma {
@@ -414,6 +473,9 @@
 .middleDiv {
     position: relative;
     margin-top: 32vh;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
 }
 
 .smaCont {
@@ -718,7 +780,7 @@
 
 .feedbackImgWrap {
     overflow: hidden;
-    height: 66.7vw;
+    height: 100%;
     z-index: 1000;
 }
 
@@ -763,12 +825,19 @@
     font-size: 1.5rem;
     margin-left: 7vw;
     margin-top: 6vh; 
+
+    background: linear-gradient(45deg, #8f2e92, #5dcbf8); 
+        color: rgb(0,0,0);
+        text-align: initial;
 }
 
 .fbText {
     font-weight: 400;
-    border: 3px solid #642067;
     padding: 15px; 
+    font-weight: 400;
+    background: #fefefe;
+    padding: 15px;
+    margin: 3px;
 }
 
 .author1 {
@@ -780,7 +849,10 @@
     background: #642067;
     color: #fefefe;
     padding: 0.5vw 2vw;
-    top: 1vw; 
+
+    background: linear-gradient(45deg, #642066, #5f72c9); 
+    margin-top: -5vh;
+    top: 3vh;
 }
 
 .author2 {
@@ -791,6 +863,10 @@
     color: #fefefe;
     padding: 0.5vw 2vw;
     left: 7vw;
+
+    background: linear-gradient(45deg, #642066, #5f72c9); 
+    margin-top: -5vh;
+    top: 3vh;
 }
 
 .feedbackTextCont {
@@ -798,7 +874,9 @@
     font-weight: 400;
     position: relative;
     height: 100%;
-    align-items: center;
+    align-items: flex-end;
+    padding-bottom: 10%;
+    box-sizing: border-box;
 }
 
 @keyframes fadeIn {
@@ -972,7 +1050,7 @@
         background-repeat: no-repeat;
         background-position: center bottom 1px;
         background-size: 100% 2px;
-        background-image: linear-gradient(to right, #642066, #5dcbf8);
+        background-image: linear-gradient(to right, #ca33cf, #5dcbf8);
     }
     .founder {
         background: #fefefe;
@@ -1067,7 +1145,7 @@
         font-size: 3.7rem;
     }
     .feedbackImgWrap {
-        height: 160vw;
+        height: 100%; 
     }
     .feedbackTextCont {
         display: flex;

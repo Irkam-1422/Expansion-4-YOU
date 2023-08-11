@@ -20,21 +20,21 @@ export const Step2 = ({step}) => {
   return (
     <div ref={cont} className={+step.num%2==0 ? `${styles.questCont2} ${animStyles.hiddenRight}` : `${styles.questCont} ${animStyles.hiddenLeft}`}>
         <div className={styles.questHeaderCont}>
-            <div className={styles._01} style={step.style.num}>
+            <div className={styles._01} style={step.style ? step.style.num : {}}>
                 {step.num}
             </div>
-            <div className={styles.titleCont} style={step.style.title}>
+            <div className={styles.titleCont} style={step.style ? step.style.title : {}}>
                 {step.title[0]} {step.title[1]} <br />  
                 <div className={styles.span}
-                     style={step.style.span}
+                     style={step.style ? step.style.span : {}}
                      >{step.title[2]}</div>
             </div>
         </div>
         {step.questions && <div className={styles.questions}>
-                {step.questions.map((q,i) => <p style={step.style.questions ? step.style.questions[i] : {paddingLeft: '21%'}}>- {q}</p>)}
+                {step.questions.map((q,i) => <p style={step.style && step.style.questions ? step.style.questions[i] : {paddingLeft: '32%'}}>- {q}</p>)}
             </div>}
         <img className={styles.img} src={require(`../../assets/${step.title[2].toLowerCase().slice(0,-1).split(' ').join('')}.png`)} 
-             style={step.style.img}
+             style={step.style ? step.style.img : {}}
              alt="" />
     </div>
   )

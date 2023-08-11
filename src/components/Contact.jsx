@@ -3,13 +3,13 @@ import styles from '../styles/Contact.module.css'
 import emailjs from 'emailjs-com'
 import { Footer } from './Footer'
 
-export const Contact = () => {
+export const Contact = ({page}) => {
 
   const cover = useRef(null)
   const submit = useRef(null)
 
   useEffect(() => {
-    document.getElementById('footer').style.display = 'flex'
+   // document.getElementById('footer').style.display = 'flex'
 
     let timerId = setTimeout(() => {
       if (cover.current) cover.current.style.transform = 'translateX(51.3%)'
@@ -45,16 +45,16 @@ export const Contact = () => {
     <div className={styles.pageCont}>
       <div className={styles.imgCont}>
         <div className={styles.imgText}>
-          This is your sign to change your digital strategy and ignite your business growth!
+          {page.components[0].content[0][0]}
           <br />  
           <br />
           <div className={styles.infoText}>
             <div className={styles.mailImg}></div>
-            Phone - +31638471411 <br />
+            {page.components[0].content[1][0]} <br />
             <div className={`${styles.mailImg} ${styles._img2}`}></div>
-            Email - info@expansion4you.nl <br />
+            {page.components[0].content[1][1]} <br />
             <div className={`${styles.mailImg} ${styles._img3}`}></div>
-            Adress - Utrecht, The Netherlands
+            {page.components[0].content[1][2]}
           </div>
         </div>
       </div>
@@ -93,10 +93,6 @@ export const Contact = () => {
           </div>
         </form>
       </div>
-    </div>
-    <div className="container">
-      <div className={styles.people}></div>
-      <Footer/>
     </div>
     </>
   )

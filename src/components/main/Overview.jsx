@@ -3,7 +3,7 @@ import styles from '../../styles/Main.module.css'
 import animStyles from '../../styles/Animation.module.css'
 import {observer} from '../../observers.js'
 
-export const Overview = () => {
+export const Overview = ({content}) => {
 
   const title1 = useRef(null)
   const title2 = useRef(null)
@@ -29,30 +29,31 @@ export const Overview = () => {
     <div className={`${styles.overviewCont} container`}>
         <div className={`${styles.title1} ${animStyles.hiddenLeft}`} ref={title1}>
           {/*     font-size: 5rem; */}
-          Oh, wait!
+          {content[0][0]}
         </div>
         <div  id='overview' className={`${window.innerHeight>window.innerWidth?'':styles.title2} ${animStyles.hiddenLeft}`} ref={title2}>
           {window.innerHeight>window.innerWidth?
           <>
-            <div className={styles.title2}>Just a quick warning</div> 
+            <div className={styles.title2}>{content[1][0]}</div> 
             {/* font-size: 5rem;
     margin-top: 2rem; */}
-            <div className={styles.title2} style={{marginLeft: '20rem'}}>before we start...</div>
+            <div className={styles.title2} style={{marginLeft: '20rem'}}>{content[1][1]}</div>
           </>
-          :'Just a quick warning before we start...'}
+          :`${content[1][0]} ${content[1][1]}`}
         </div>
         <div className={`${styles.textCont} ${animStyles.hiddenOp}`} ref={text}>
-            <span>Beware, boosting your digital marketing strategy can <span className={styles.span}>attract new customers significantly</span>.</span> <br />
+          {content[2][0]}
+            {/* <span>Beware, boosting your digital marketing strategy can <span className={styles.span}>attract new customers significantly</span>.</span> <br />
             <span>This can cause <span className={styles.span}>severe growth</span> of your <span className={styles.span}>revenue</span> and <span className={styles.span}>customer loyality</span>. </span><br />
             <span>All the content we are showing here is based on <span className={styles.span}>real life cases</span>, </span><br />
             <span>and may cause the addiction to admiring the digital marketing, </span><br />
-            <span>and the will to <span className={styles.span}>change your business for the best</span>.</span><br />
+            <span>and the will to <span className={styles.span}>change your business for the best</span>.</span><br /> */}
         </div>
         <div  className={styles.stopCont}>
             <div className={`${styles.stop} ${animStyles.hiddenOp}`} ref={stop}>
-                STOP NOW!
+              {content[3][0]}
             </div>
-            <span  className={`${styles.remark} ${animStyles.hiddenRight}`} ref={remark}>*Or you might upset your competition...</span>
+            <span  className={`${styles.remark} ${animStyles.hiddenRight}`} ref={remark}>{content[4][0]}</span>
         </div>
     </div>
   )
