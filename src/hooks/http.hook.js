@@ -47,7 +47,7 @@ export const useHttp = () => {
             setError(e.message)
             console.log(e)
             console.log(e.message)
-            console.log(e.response)
+            console.log(e.data)
             throw e
         }
     },[])
