@@ -4,6 +4,7 @@ import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from 'react-router-dom'
+// "proxy": "http://127.0.0.1:4500",
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
