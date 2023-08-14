@@ -46,6 +46,8 @@ export const useHttp = () => {
             setLoading(false)
             setError(e.message)
             console.log(e)
+            console.log(e.message)
+            console.log(e.response)
             throw e
         }
     },[])
