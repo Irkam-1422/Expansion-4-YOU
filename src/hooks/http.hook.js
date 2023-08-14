@@ -38,7 +38,10 @@ export const useHttp = () => {
             console.log('wrong method!');
           }
 
-          if (!response.ok) throw new Error(data.message || 'Something went wrong')
+          //if (!response.ok) throw new Error(data.message || 'Something went wrong')
+          if (response.status !== 200) {
+            throw new Error(data.message || 'Something went wrong');
+          }
           
           setLoading(false)
           console.log('data before returning:', data)
