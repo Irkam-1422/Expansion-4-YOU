@@ -18,11 +18,21 @@ export const useHttp = () => {
             }
           }
 
-          const response = await fetch(url, {method,body,headers})
-          const data = await response.json()
+          // const response = await fetch(url, {method,body,headers})
+          // const data = await response.json()
+          
+          let response;
+          let data;
 
-          console.log(response)
-          console.log(data)
+          if (method === 'GET') {
+            response = await axios.get(url)
+            data = await response.data
+            console.log(data)
+          } else if (method === 'POST') {
+            response = await axios.post(url, body)
+            data = await response.data
+            console.log(data)
+          }
 
           if (!response.ok) throw new Error(data.message || 'Something went wrong')
           
@@ -32,6 +42,7 @@ export const useHttp = () => {
         } catch (e) {
             setLoading(false)
             setError(e.message)
+            console.log(e)
             throw e
         }
     },[])

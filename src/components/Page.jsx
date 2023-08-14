@@ -1,5 +1,6 @@
 import React, {useCallback, useState, useEffect, cloneElement} from 'react'
 import { useHttp } from "../hooks/http.hook"
+import axios from 'axios';
 
 export const Page = ({name,component}) => {
 
