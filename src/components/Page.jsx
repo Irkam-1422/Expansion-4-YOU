@@ -8,7 +8,9 @@ export const Page = ({name,component}) => {
 
     const getPage = useCallback(async () => {
         try {
-            const fetched = await request(`/api/content/:${name}`, 'GET', null)
+            const timestamp = Date.now(); // Get the current timestamp
+            const url = `/api/content/:${name}?timestamp=${timestamp}` 
+            const fetched = await request(url, 'GET', null)
             setElement(cloneElement(component, {page: fetched.page}))
         } catch (e) {}
     },[request,name]) 
