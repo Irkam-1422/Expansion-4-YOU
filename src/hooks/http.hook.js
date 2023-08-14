@@ -27,12 +27,16 @@ export const useHttp = () => {
           let data;
 
           if (method === 'GET') {
-            response = await axios.get(serverUrl+url)
+            response = await axios.get(serverUrl+url, { headers: headers })
             data = await response.data
             console.log('data after fetching:', data)
           } else if (method === 'POST') {
-            response = await axios.post(serverUrl+url, body)
-            data = await response.data
+            response = await axios.post(serverUrl + url, body, { 
+            headers: {
+              ...headers,
+              'Content-Type': 'application/json'
+            } });
+            data = response.data;
             console.log('data after fetching:', data)
           } else {
             console.log('wrong method!');
@@ -42,7 +46,7 @@ export const useHttp = () => {
           if (response.status !== 200) {
             throw new Error(data.message || 'Something went wrong');
           }
-          
+
           setLoading(false)
           console.log('data before returning:', data)
           return data
@@ -52,7 +56,6 @@ export const useHttp = () => {
             setError(e.message)
             console.log(e)
             console.log(e.message)
-            console.log(e.data)
             throw e
         }
     },[])
