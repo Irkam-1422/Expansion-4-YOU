@@ -27,16 +27,19 @@ export const useHttp = () => {
           if (method === 'GET') {
             response = await axios.get(url)
             data = await response.data
-            console.log(data)
+            console.log('data after fetching:', data)
           } else if (method === 'POST') {
             response = await axios.post(url, body)
             data = await response.data
-            console.log(data)
+            console.log('data after fetching:', data)
+          } else {
+            console.log('wrong method!');
           }
 
           if (!response.ok) throw new Error(data.message || 'Something went wrong')
           
           setLoading(false)
+          console.log('data before returning:', data)
           return data
 
         } catch (e) {
