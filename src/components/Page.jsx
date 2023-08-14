@@ -10,7 +10,9 @@ export const Page = ({name,component}) => {
         try {
             const timestamp = Date.now(); // Get the current timestamp
             const url = `/api/content/:${name}?timestamp=${timestamp}` 
+            console.log('fetched')
             const fetched = await request(url, 'GET', null)
+            console.log(fetched)
             setElement(cloneElement(component, {page: fetched.page}))
         } catch (e) {}
     },[request,name]) 
