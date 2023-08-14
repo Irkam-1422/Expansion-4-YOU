@@ -2,6 +2,8 @@ import { useCallback } from "react"
 import { useState } from "react"
 import axios from 'axios';
 
+const serverUrl = 'https://expansion4-you-server.vercel.app';
+
 export const useHttp = () => {
     const [loading,setLoading] = useState(false)
     const [error,setError] = useState(null)
@@ -25,11 +27,11 @@ export const useHttp = () => {
           let data;
 
           if (method === 'GET') {
-            response = await axios.get(url)
+            response = await axios.get(serverUrl+url)
             data = await response.data
             console.log('data after fetching:', data)
           } else if (method === 'POST') {
-            response = await axios.post(url, body)
+            response = await axios.post(serverUrl+url, body)
             data = await response.data
             console.log('data after fetching:', data)
           } else {

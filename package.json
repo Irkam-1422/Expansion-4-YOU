@@ -29,7 +29,6 @@
       "react-app/jest"
     ]
   },
-  "proxy": "https://expansion4-you-server.vercel.app/",
   "browserslist": {
     "production": [
       ">0.2%",
