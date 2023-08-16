@@ -25,7 +25,7 @@ export const Services = ({page,servicesReturn}) => {
 
     servicesReturn(page.components[0].content.map(s => s[0]))
 
-    for (let i = 0; i < page.components[0].content.length; i++) {
+    for (let i = 1; i < page.components[0].content.length; i++) {
       const element = page.components[0].content[i][0]
       setServices(prev => prev.concat([{img: 'SMA.jpg', title: element}]))
     }
