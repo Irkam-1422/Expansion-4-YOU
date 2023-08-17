@@ -52,23 +52,23 @@ export const About = ({reverted,content}) => {
                         </div>
                         <div className={window.innerHeight>window.innerWidth?styles.aboutText:`${styles.aboutText} ${animStyles.hiddenLeft}`} ref={text1} style={{transition: 'all 1s'}}>
                             <div style={{background: '#fefefe', padding: '4%'}}>
-                                "{content[1][0]}
+                                "{content[1][0]+" "}
                                 <span className={styles.underlineBlue}>
-                                {content[1][1]}
+                                {content[1][1]+" "}
                                 </span> 
-                                {content[1][2]}
+                                {content[1][2]+" "}
                                 <span className={styles.underlineBlue}>
-                                {content[1][3]}
+                                {content[1][3]+" "}
                                 </span>
                                 </div>
                             <div style={{background: '#fefefe', padding: '4%'}}>
-                            {content[2][0]} 
+                            {content[2][0]+" "} 
                                 <span className={styles.underlineBlue}>
-                                {content[2][1]}
+                                {content[2][1]+" "}
                                 </span> 
-                                {content[2][2]} 
+                                {content[2][2]+" "} 
                                 <span className={styles.underlineBlue}>
-                                {content[2][3]}
+                                {content[2][3]+" "}
                                 </span> 
                                 {content[2][4]}"
                                 </div>
@@ -85,16 +85,16 @@ export const About = ({reverted,content}) => {
                     </div>
                     <div className='{animStyles.hiddenOp}'>
                     <div className="">
-                    {content[5][0]}
+                    {content[5][0]+" "}
                         <span className={styles.underlinePink}>
-                        {content[5][1]}
+                        {content[5][1]+" "}
                         </span></div>
                         <div className="">
-                        {content[5][2]}
+                        {content[5][2]+" "}
                             <span className={styles.underlinePink}>
-                            {content[5][3]}
+                            {content[5][3]+" "}
                             </span> <br />
-                            {content[5][4]}
+                            {content[5][4]+" "}
                             <span className={styles.underlinePink}>
                             {content[5][5]}
                             </span>
