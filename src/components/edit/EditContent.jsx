@@ -144,6 +144,10 @@ return (
     {open && <Modal msg={msg} returnClose={closeModal} page={page.page}/>} 
     {modal && <Modal2 msg={msg2} returnClose={closeModal} returnDelete={deleteService}/>} 
     <div className={styles.pannel}> 
+        <div className={styles.whiteBtnCont}>
+          <div className={styles.whiteBtn} onClick={() => setAssets(false)}>Text Content</div>
+          <div className={styles.whiteBtn} onClick={() => setAssets(true)} >Visual Content</div>
+        </div>
         {!assets && page.components.map((c,component) => {
             return (<>
             {page.parent == 'services' && (c.title=='Footer' || component==page.components.length-1) && <> {steps.map((step,index) => <div className={styles.box}>
