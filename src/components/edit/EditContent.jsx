@@ -18,6 +18,7 @@ export const EditContent = ({page,returnPage,reloadServices,returnServices}) => 
   const [form,setForm] = useState([])
   const [open,setOpen] = useState(false)
   const [modal,setModal] = useState(false)
+  const [assets,setAssets] = useState(false)
   const [msg,setMsg] = useState({
     text: '', success: ''
   })
@@ -142,7 +143,7 @@ return (
     {open && <Modal msg={msg} returnClose={closeModal} page={page.page}/>} 
     {modal && <Modal2 msg={msg2} returnClose={closeModal} returnDelete={deleteService}/>} 
     <div className={styles.pannel}> 
-        {page.components.map((c,component) => {
+        {!assets && page.components.map((c,component) => {
             return (<>
             {page.parent == 'services' && (c.title=='Footer' || component==page.components.length-1) && <> {steps.map((step,index) => <div className={styles.box}>
               <input type="text" 
@@ -226,6 +227,40 @@ return (
             </div> 
             </>
         )})}
+        {assets && <div style={{margin: '5%'}}>
+          {page.assets.map(a => {
+            if (a[a.length-1] == '4') {
+              return (<div style={{position: 'relative'}}>
+                {/* Video: {a} */}
+                <video 
+                       src={require(`../../assets/${a}`)}
+                       type="video/mp4"
+                       muted  
+                       autoPlay="autoplay"   
+                       loop="loop"
+                       style={{width: '100%'}} ></video>
+                <div className={styles.assetCover}
+                     onMouseEnter={(e) => e.target.style.opacity = '1'}
+                     onMouseLeave={(e) => e.target.style.opacity = '0'}
+                     >
+                  {/* <button className={styles.whiteBtn} >Change Video</button> */}
+                  <ChangeFile name={a} returnNewFile={(name) => console.log(name)} click={click}/>
+                </div>
+              </div>)
+            } else {
+              return (<div style={{position: 'relative'}}>
+                <img style={{width: '100%'}} src={require(`../../assets/${a}`)} alt="" />
+                <div className={styles.assetCover}
+                     onMouseEnter={(e) => e.target.style.opacity = '1'}
+                     onMouseLeave={(e) => e.target.style.opacity = '0'}
+                     >
+                  {/* <button className={styles.whiteBtn} >Change Photo</button> */}
+                  <ChangeFile name={a} returnNewFile={(name) => console.log(name)} click={false}/>
+                </div>
+              </div>)
+            }
+          })}
+        </div> }
     </div>
     <button className={styles.submitUpdates} onClick={publishHandler}>Submit Updates</button>
 </div>
