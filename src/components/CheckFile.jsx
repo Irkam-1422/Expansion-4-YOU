@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { useEffect } from 'react'
 import styles from '../styles/Articles.module.css'
 
+const serverUrl = 'https://expansion4-you-server.vercel.app';
 
 export const ChangeFile = ({name, returnNewFile, click}) => {
   
@@ -20,7 +21,7 @@ export const ChangeFile = ({name, returnNewFile, click}) => {
 
         console.log(formData.get('file'), formData.get('name'))
 
-        const res = await fetch('/api/content/change-file', {
+        const res = await fetch(serverUrl+'/api/content/change-file', {
             method: 'POST',
             body: formData,
         })
@@ -47,7 +48,6 @@ export const ChangeFile = ({name, returnNewFile, click}) => {
                className={styles.input}
                onClick={() => console.log('fileInput')}
                /> 
-        {/* {uploaded.length && <img src={require(`../assets/${uploaded}`)} style={{width: '60%', marginTop: '2%' }} /> } */}
     </div> 
   )
 }
