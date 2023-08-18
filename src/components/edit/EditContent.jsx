@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useHttp } from '../../hooks/http.hook'
 import styles from '../../styles/Edit.module.css'
+import { ChangeFile } from '../CheckFile'
 import { Modal } from '../Modal'
 import { Modal2 } from '../Modal2'
 
@@ -244,7 +245,7 @@ return (
                      onMouseLeave={(e) => e.target.style.opacity = '0'}
                      >
                   {/* <button className={styles.whiteBtn} >Change Video</button> */}
-                  <ChangeFile name={a} returnNewFile={(name) => console.log(name)} click={click}/>
+                  <ChangeFile name={a} returnNewFile={(name) => console.log(name)} click={false}/>
                 </div>
               </div>)
             } else {
