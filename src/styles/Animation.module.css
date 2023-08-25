@@ -4,12 +4,12 @@
 
 .hiddenLeft {
     opacity: 0;
-    transform: translateX(-50%);
+    transform: translateX(-30%);
 }
 
 .hiddenRight {
     opacity: 0;
-    transform: translateX(50%);
+    transform: translateX(30%);
 }
 
 .hiddenTop {
