@@ -11,7 +11,7 @@ export const Step2 = ({step}) => {
 
   const fetchFileData = async (filename) => {
         try {
-            const response = await fetch(`/api/file/get/${filename}`);
+            const response = await fetch(`https://expansion4-you-server.vercel.app/api/file/get/${filename}`);
             const arrayBuffer = await response.arrayBuffer(); 
             const base64String = btoa(
                 new Uint8Array(arrayBuffer).reduce(
