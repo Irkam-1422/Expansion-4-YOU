@@ -1,13 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useState, useRef, useEffect } from 'react'
 import styles from '../../styles/Edit.module.css'
-import artStyles from '../../styles/Articles.module.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export const EditNav = ({givenPage, origActivity, returnPage, reload, services, returnClearServices}) => {
 
-    const activities = ['Edit Content', 'Articles', 'CaseStudies']
-    const acts = useRef(null)
     const navigate = useNavigate()
     const [activity,setActivity] = useState(origActivity)
     const [page,setPage] = useState('home')
@@ -93,13 +90,6 @@ export const EditNav = ({givenPage, origActivity, returnPage, reload, services, 
         { activity == 'Edit Content' && page == 'services' && <select className={styles.select} name="services" onChange={handlePageChange} value={page}>
             <option disabled>Service:</option>
             {services.map(s => <option value={s.split(' ').join('').split('-').join('').toLowerCase()}>{s}</option>)}
-            {/* <option value="marketingstrategy">Marketing Strategy</option>
-            <option value="ecommerce">E-commerce</option>
-            <option value="branding">Branding</option>
-            <option value="socialmediaadvertising">Social Media Advertising</option>
-            <option value="searchengineadvertising">Search Engine Advertising</option>
-            <option value="webdevelopment">Web Development</option>
-            <option value="searchengineoptimization">Search Engine Optimization</option> */}
         </select> }
     </div> 
   )

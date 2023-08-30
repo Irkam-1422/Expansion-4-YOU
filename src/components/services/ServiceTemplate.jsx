@@ -29,8 +29,6 @@ export const ServiceTemplate = ({page}) => {
         setTimeout(() => {
           cover.current.style.opacity = '0'
           cover.current.style.zIndex = '-1'
-            //container.current.style.background = 'linear-gradient(45deg, #ca33cf, #61dafb)'
-            // container.current.style.background = '#ca33cf'
         }, 100)
     }
   },[])

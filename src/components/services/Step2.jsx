@@ -7,6 +7,25 @@ export const Step2 = ({step}) => {
 
   const cont = useRef(null)  
 
+  const [fileData, setFileData] = useState('')   
+
+  const fetchFileData = async (filename) => {
+        try {
+            const response = await fetch(`/api/file/get/${filename}`);
+            const arrayBuffer = await response.arrayBuffer(); 
+            const base64String = btoa(
+                new Uint8Array(arrayBuffer).reduce(
+                    (data, byte) => data + String.fromCharCode(byte),
+                    ''
+                )
+            ); 
+        const str = `data:image/png;base64,${base64String}`
+        setFileData(str)
+        } catch (error) {
+            console.error('Error fetching file data:', error);
+        }
+  };
+
   React.useEffect(() => { 
     console.log(window.innerWidth) 
     if (window.innerWidth < 850) {
@@ -15,6 +34,8 @@ export const Step2 = ({step}) => {
         if (+step.num%2 == 0) {observer(`${animStyles.hiddenRight}`).observe(cont.current)}
         else {observer(`${animStyles.hiddenLeft}`).observe(cont.current)}
     }
+
+    fetchFileData(`${step.title[2].toLowerCase().slice(0,-1).split(' ').join('')}.png`)
   }, [])  
 
   return (
@@ -33,7 +54,7 @@ export const Step2 = ({step}) => {
         {step.questions && <div className={styles.questions}>
                 {step.questions.map((q,i) => <p style={step.style && step.style.questions ? step.style.questions[i] : {paddingLeft: '32%'}}>- {q}</p>)}
             </div>}
-        <img className={styles.img} src={require(`../../assets/${step.title[2].toLowerCase().slice(0,-1).split(' ').join('')}.png`)} 
+        <img className={styles.img} src={fileData} 
              style={step.style ? step.style.img : {}}
              alt="" />
     </div>

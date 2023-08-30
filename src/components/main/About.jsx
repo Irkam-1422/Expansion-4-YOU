@@ -2,7 +2,6 @@ import React, {useState,useRef,useEffect} from 'react'
 import styles from '../../styles/Main.module.css'
 import animStyles from '../../styles/Animation.module.css'
 
-import {observer} from '../../observers.js'
 export const About = ({reverted,content}) => {
 
   const title1 = useRef(null)  
@@ -12,6 +11,29 @@ export const About = ({reverted,content}) => {
   const title2 = useRef(null)  
   const text2 = useRef(null) 
   const container = useRef(null)  
+
+  const [fileData, setFileData] = useState('')   
+
+  const fetchFileData = async (filename) => {
+        try {
+            const response = await fetch(`/api/file/get/${filename}`);
+            const arrayBuffer = await response.arrayBuffer(); 
+            const base64String = btoa(
+                new Uint8Array(arrayBuffer).reduce(
+                    (data, byte) => data + String.fromCharCode(byte),
+                    ''
+                )
+            ); 
+        const str = `data:image/png;base64,${base64String}`
+        setFileData(str)
+        } catch (error) {
+            console.error('Error fetching file data:', error);
+        }
+  };  
+
+  useEffect(() => {
+    fetchFileData('founder.jpg')
+  },[])
 
   useEffect(() => {
     console.log(reverted)
@@ -27,7 +49,7 @@ export const About = ({reverted,content}) => {
             elements2.forEach(elm => {
                 if (elm) elm.classList.remove(`${animStyles.hiddenRight}`)
             })
-        }, 1500);
+        }, 700);
     } else {
         if (container && window.innerHeight < window.innerWidth) container.current.style.transform = 'translateX(103%)'
         elements1.forEach(elm => {
@@ -42,13 +64,12 @@ export const About = ({reverted,content}) => {
 
   return (
     <div ref={container} className={`container ${styles.aboutMainCont}`} style={window.innerHeight>window.innerWidth?{transform: 'none'}:{position: 'absolute' ,top: `${window.innerHeight*2}px`}}>
-        {/* style={window.innerHeight>window.innerWidth?{height: 'auto'}:{}} */}
         <div className={styles.revert}>
                 <div className={styles.aboutCont}>
                     <div className={window.innerHeight>window.innerWidth?styles.title1:`${styles.title1} ${animStyles.hiddenLeft}`} styles={{transform: 'none'}} ref={title1} id='about'>{content[0][0]}</div>
                     <div className={styles.imgCont}>
                         <div className={window.innerHeight>window.innerWidth?styles.imgWrap:`${styles.imgWrap} ${animStyles.hiddenLeft}`} ref={image} style={{transition: 'all 1s'}}>
-                            <img className={styles.img} src={require('../../assets/founder.jpg')} alt="founder" />
+                            <img className={styles.img} src={fileData} alt="founder" />
                         </div>
                         <div className={window.innerHeight>window.innerWidth?styles.aboutText:`${styles.aboutText} ${animStyles.hiddenLeft}`} ref={text1} style={{transition: 'all 1s'}}>
                             <div style={{background: '#fefefe', padding: '4%'}}>

@@ -3,8 +3,8 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from '../../styles/Articles.module.css'
 import { useHttp } from "../../hooks/http.hook"
-import { FileInput } from "../FileInput"
-import { CheckForImage } from "./CheckForImage"
+import { FileUpload } from "../FileUpload"
+import { Files } from "../edit/Files"
 
 export const AddArticle = ({article}) => {
 
@@ -61,7 +61,7 @@ export const AddArticle = ({article}) => {
   const addPhoto = () => {
     console.log(form.title.split(' ').join(''))
     setElements(prev => prev.concat([
-        <FileInput name={form.title.split(' ').join('')} returnSuccess={handlePhotoReturn}/>
+        <FileUpload name={form.title.split(' ').join('')} returnSuccess={handlePhotoReturn}/>
     ])) 
   }
 
@@ -207,7 +207,7 @@ export const AddArticle = ({article}) => {
     if (text=='subtitle') array[index] = subtitle(index).subtitle
     if (text=='paragraph') array[index] = paragraph(index).paragraph
     console.log(text)
-    if (text=='photo') array[index] = <FileInput name={form.title.split(' ').join('')} returnSuccess={(name) => handlePhotoReturn2(name,index)}/>
+    if (text=='photo') array[index] = <FileUpload name={form.title.split(' ').join('')} returnSuccess={(name) => handlePhotoReturn2(name,index)}/>
     setAdditional([...array])
   } 
 
@@ -258,8 +258,8 @@ export const AddArticle = ({article}) => {
                     placeholder="Paragraph" 
                     onChange={changeHandler}
                     ></textarea>}
-              {elm.type == 'photo' && 
-                 <CheckForImage source={elm.text}/>
+              {elm.type == 'photo' &&  
+                <Files a={elm.text}/>
               }
               {additional[i] && additional[i]} 
             </div> )

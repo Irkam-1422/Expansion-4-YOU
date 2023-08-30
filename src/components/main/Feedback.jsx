@@ -1,4 +1,4 @@
-import React, {useState,useRef,useEffect} from 'react'
+import React, {useRef,useEffect} from 'react'
 import styles from '../../styles/Main.module.css'
 import animStyles from '../../styles/Animation.module.css'
 import {observer} from '../../observers.js'
@@ -35,10 +35,6 @@ export const Feedback = ({content}) => {
                 <div className={`${styles.title1} ${styles.titleSmall}`} ref={title1} style={window.innerHeight>window.innerWidth?{fontSize: '3.7rem'}:{}}>
                     {content[0][0]}
                 </div>
-                {/* font-size: 3rem;
-    background: black;
-    color: #fefefe;
-    margin-left: 0; */}
                 <div className={`${styles.title2} ${styles.titleSmall}`} ref={title2} style={window.innerHeight>window.innerWidth?{fontSize: '3.7rem'}:{}}>
                     {content[0][1]}
                 </div>

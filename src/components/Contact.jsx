@@ -1,15 +1,31 @@
 import React, {useRef,useEffect} from 'react'
 import styles from '../styles/Contact.module.css'
 import emailjs from 'emailjs-com'
-import { Footer } from './Footer'
 
 export const Contact = ({page}) => {
 
   const cover = useRef(null)
   const submit = useRef(null)
+  const imgDiv = useRef(null)
+
+  const fetchFileData = async (filename) => {
+        try {
+            const response = await fetch(`/api/file/get/${filename}`);
+            const arrayBuffer = await response.arrayBuffer(); 
+            const base64String = btoa(
+                new Uint8Array(arrayBuffer).reduce(
+                    (data, byte) => data + String.fromCharCode(byte),
+                    ''
+                )
+            ); 
+        const str = `data:image/png;base64,${base64String}`
+        if (imgDiv.current) imgDiv.current.style.backgroundImage = `url(${str})`
+        } catch (error) {
+            console.error('Error fetching file data:', error);
+        }
+  };
 
   useEffect(() => {
-   // document.getElementById('footer').style.display = 'flex'
 
     let timerId = setTimeout(() => {
       if (cover.current) cover.current.style.transform = 'translateX(51.3%)'
@@ -17,20 +33,12 @@ export const Contact = ({page}) => {
         if (cover.current) cover.current.style.transform = 'translateX(100%)'
       }, 1200)
     }, 200)
+
+    fetchFileData('contact5.png')
   },[])
 
   const sendEmail = (e) => {
     e.preventDefault() 
-
-    // emailjs.sendForm('test', 'template_cjx31w9', 
-    // e.target, 'cNS0RvHP3DClgf7RI')
-    // .then((result) => {
-    //       console.log(result.text);
-    //       alert('Your message was successfully send!')
-    //   }, 
-    //    (error) => {
-    //       console.log(error.text);
-    //    });
   }
 
   const handleClick = (e) => {
@@ -43,7 +51,7 @@ export const Contact = ({page}) => {
   return (
     <>
     <div className={styles.pageCont}>
-      <div className={styles.imgCont}>
+      <div className={styles.imgCont} ref={imgDiv}>
         <div className={styles.imgText}>
           {page.components[0].content[0][0]}
           <br />  

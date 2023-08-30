@@ -1,5 +1,5 @@
 import React, { useEffect,useCallback,useState,cloneElement } from 'react'
-import { useParams,useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useHttp } from '../../hooks/http.hook'
 
 export const EditArticle = ({component}) => {

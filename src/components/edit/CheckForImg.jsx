@@ -1,50 +1,53 @@
 import React, {useEffect, useState} from 'react'
-import { FileInput } from '../FileInput'
+import { FileUpload } from '../FileUpload'
 
 export const CheckForImg = ({source}) => {
 
-  const [src,setSrc] = useState(null)
+  const [fileData, setFileData] = useState(null)   
+
+  const fetchFileData = async (filename) => {
+        try {
+            const response = await fetch(`/api/file/get/${filename}`);
+            const arrayBuffer = await response.arrayBuffer(); 
+            const base64String = btoa(
+                new Uint8Array(arrayBuffer).reduce(
+                    (data, byte) => data + String.fromCharCode(byte),
+                    ''
+                )
+            ); 
+        const str = `data:image/png;base64,${base64String}`
+        setFileData(str)
+        } catch (error) {
+            console.error('Error fetching file data:', error);
+        }
+  };
 
   useEffect(() => {
     console.log(source)
     console.log(source.slice(0,source.length-1));
     try{
-        const src = source.includes('service') 
-        ? require(`../../assets/${source}.png`)
-        : require(`../../assets/${source.slice(0,source.length-1)}.png`)
-        setSrc(src)
+        source.includes('service') 
+        ? fetchFileData(source) 
+        : fetchFileData(source.slice(0,source.length-1))
     }
     catch(err){
-        try{
-            const src = source.includes('service') 
-            ? require(`../../assets/${source}.jpeg`)
-            : require(`../../assets/${source.slice(0,source.length-1)}.jpeg`)
-            setSrc(src)
-        }
-        catch(err){
-            console.log(err)
-        }
+      console.log(err)
     }
   },[source])  
 
-  const handlePhotoReturn = (name) => {
-    console.log(name)
-    //setForm({...form, body: form.body.concat({type: 'photo', text: name})}) 
-  }
-
   return (
     <div>
-        {src ? <>
+        {fileData ? <>
             <div style={{color: '#8f3193', margin: '1%'}}>
                 There's already an image existing for this step. <br /> 
                 If you want to use another image, change the second input. 
             </div> 
-            <img src={src} style={{width: '50%'}} />
+            <img src={fileData} style={{width: '50%'}} />
             </> : <>
             <div className="">
                 You have to upload the image for this step
             </div> 
-            <FileInput name={source.includes('service') ? source : source.slice(0,source.length-1)} returnSuccess={(name) => handlePhotoReturn(name)}/>
+            <FileUpload name={source.includes('service') ? source : source.slice(0,source.length-1)} returnSuccess={(name) => console.log(name)}/>
             </>}
     </div>
   )

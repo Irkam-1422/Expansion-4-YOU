@@ -1,10 +1,4 @@
 import React, {useState, useRef, useEffect, useContext} from 'react'
-import { EditContext } from '../context/EditContext';
-import { Main } from './Main'
-import { Services } from './Services'
-import { About } from './About'
-import { HowWeWork } from './HowWeWork'
-import { Contact } from './Contact'
 import styles from '../styles/Edit.module.css'
 import { Header } from './main/Header'
 import { Overview } from './main/Overview'
@@ -25,39 +19,12 @@ const home = [
     {page: <Feedback/>, value: 'Feedback'}
 ]
 
-const services = [
-    {page: <Header/>, value: 'Marketing Strategy'},
-    {page: <Overview/>, value: 'E-Commerce'},
-    {page: <Welcoming/>, value: 'Branding'},
-    {page: <MainAbout/>, value: 'Search Engine Advertizing'},
-    {page: <MainServices/>, value: 'Social Media Advertizing'},
-    {page: <Feedback/>, value: 'Web Development'},
-    {page: <Feedback/>, value: 'Search Engine Optimization'}
-]
-const about = [
-    {page: <Header/>, value: 'What are we about?'},
-    {page: <Overview/>, value: 'Not a regular company'},
-    {page: <Welcoming/>, value: 'Founder'},
-]
-const work = [
-    {page: <Header/>, value: 'What`s next?'},
-    {page: <Overview/>, value: 'What will we do?'},
-    {page: <Welcoming/>, value: 'And then?'},
-    {page: <MainAbout/>, value: 'And next?'},
-    {page: <MainServices/>, value: 'Why us?'}
-]
-const contact = []
-
 export const Edit = ({returnActivity,returnGivenPage,returnPage}) => {
 
   const {loading, request, error, clearError} = useHttp()  
-  const container = useRef(null)  
   const auth = useContext(AuthContext)  
   const navigate = useNavigate()
-  const [height,setHeight] = useState(window.innerHeight)  
-  const [width,setWidth] = useState(window.innerWidth)  
   const [pages,setPages] = useState([])  
-  const [components,setComponents] = useState(home) 
 
 
   useEffect(() => {
@@ -70,23 +37,7 @@ export const Edit = ({returnActivity,returnGivenPage,returnPage}) => {
     }
     getPages()
 
-    if (container.current) {
-        setHeight(getCoords(container.current).bottom-getCoords(container.current).top)
-        setWidth(getCoords(container.current).right-getCoords(container.current).left);
-    }
   },[])
-
-
-  const getCoords = (elem) => {
-    let box = elem.getBoundingClientRect();
-  
-    return {
-      top: box.top + window.pageYOffset,
-      right: box.right + window.pageXOffset,
-      bottom: box.bottom + window.pageYOffset,
-      left: box.left + window.pageXOffset
-    };
-  }
 
   const handleLogOut = () => {
     navigate('/')

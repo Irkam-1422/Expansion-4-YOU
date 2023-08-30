@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react'
 import { useHttp } from '../../hooks/http.hook'
-import { ArticleBoxLight } from './ArticleBoxLight'
 import styles from '../../styles/Articles.module.css' 
 import { Link } from 'react-router-dom'
 import { Modal2 } from '../Modal2'
@@ -48,8 +47,7 @@ export const YourArticles = () => {
   }
 
   const setAsMainArticle = async (title) => {
-    //console.log(e.target.innerHTML)
-    //e.target.innerHTML == '☆' ? e.target.innerHTML = '★' : e.target.innerHTML = '☆' 
+
     try {
       const name = title.split(' ').join('-')
       console.log(name)
@@ -62,8 +60,6 @@ export const YourArticles = () => {
   return ( 
     <div className={styles.allArticlesCont}>
       <h1 className={styles.allArticlesH1}>All Articles:</h1>
-      {/* background: linear-gradient(45deg, #de30e41f, #61dafb29);
-    padding: 1% 5%; */}
       <div 
       className={styles.lightBoxCont}
       >

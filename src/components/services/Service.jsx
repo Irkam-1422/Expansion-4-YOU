@@ -2,27 +2,44 @@ import React from 'react'
 import styles from '../../styles/Services.module.css'
 import animStyles from '../../styles/Animation.module.css'
 import {observer} from '../../observers.js'
-import { InsideService } from './InsideService'
 import { useNavigate } from 'react-router-dom'
  
 export const Service = ({service,i}) => {
 
   const srvc = React.useRef(null)  
   const navigate = useNavigate()
-  const [open,setOpen] = React.useState(false)
+
+  const [fileData, setFileData] = React.useState('')   
+
+  const fetchFileData = async (filename) => {
+        try {
+            const response = await fetch(`/api/file/get/${filename}`);
+            const arrayBuffer = await response.arrayBuffer(); 
+            const base64String = btoa(
+                new Uint8Array(arrayBuffer).reduce(
+                    (data, byte) => data + String.fromCharCode(byte),
+                    ''
+                )
+            ); 
+        const str = `data:image/png;base64,${base64String}`
+        setFileData(str)
+        } catch (error) {
+            console.error('Error fetching file data:', error);
+        }
+  };
 
   React.useEffect(() => {
     if (i%2 == 0) {observer(`${animStyles.hiddenRight}`).observe(srvc.current)}
     else {observer(`${animStyles.hiddenLeft}`).observe(srvc.current)}
+
+    fetchFileData(`service${i+1}.png`)
   }, []) 
 
   const handleClick = (title) => {
-    //setOpen(true)
     navigate(`/${title.split(' ').join('').split('-').join('').toLowerCase()}`)
   } 
   return (
     <>
-    {open && <InsideService closeModal={() => setOpen(false)} i={i}/>}
     <div className={i%2 == 0 ? styles.serviceCont_2 : styles.serviceCont_1} >
         <div
              style={{transition: 'all 1s'}}
@@ -32,12 +49,10 @@ export const Service = ({service,i}) => {
                  onClick={() => handleClick(service.title)}
                 >
                 <img className={styles.imgService} 
-                     src={require(`../../assets/service${i+1}.png`)} 
+                     src={fileData} 
                      alt="" 
                      />
                 <div className={i%2 == 0 ? `${styles.servicesText_2} ${styles[`aaa${i}`]}` : `${styles.servicesText_1} ${styles[`aaa${i}`]}`} id={`srvc${i}`}>
-                    {/* position: absolute;
-    top: 10%; */}
                     {service.title}
                 </div>
             </div> 

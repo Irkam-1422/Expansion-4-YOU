@@ -45,8 +45,29 @@ export const About = ({page}) => {
   const founderText = useRef(null)
   const h1 = useRef(null)
 
+  const [fileData, setFileData] = useState('')   
+
+  const fetchFileData = async (filename) => {
+        try {
+            const response = await fetch(`/api/file/get/${filename}`);
+            const arrayBuffer = await response.arrayBuffer(); 
+            const base64String = btoa(
+                new Uint8Array(arrayBuffer).reduce(
+                    (data, byte) => data + String.fromCharCode(byte),
+                    ''
+                )
+            ); 
+        const str = `data:image/png;base64,${base64String}`
+        setFileData(str)
+        } catch (error) {
+            console.error('Error fetching file data:', error);
+        }
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0)
+
+    fetchFileData('founder.jpg')
   },[])
 
   useEffect(() => {
@@ -199,7 +220,7 @@ export const About = ({page}) => {
           </div>
         </div>
         <div className={styles.founderCont} ref={container2} style={{zIndex: '2', position: 'relative'}}>
-          <img src={require(`../assets/founder.jpg`)} className={`${styles.founder} ${animStyles.hiddenLeft}`} ref={founderImg}/>
+          <img src={fileData} className={`${styles.founder} ${animStyles.hiddenLeft}`} ref={founderImg}/>
           <div className={`${styles.foundertextBorder} ${animStyles.hiddenRight}`} ref={founderText}> 
             <div className={styles.founderText}>
               " {page.components[7].content[0][0]} " 

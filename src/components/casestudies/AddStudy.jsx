@@ -3,8 +3,8 @@ import { useState, useRef, useEffect } from "react"
 import { useNavigate } from 'react-router-dom'
 import styles from '../../styles/Articles.module.css'
 import { useHttp } from "../../hooks/http.hook"
-import { CheckForImage } from '../articles/CheckForImage'
-import { FileInput } from '../FileInput'
+import { Files } from '../edit/Files'
+import { FileUpload } from '../FileUpload'
 
 export const AddStudy = ({casestudy}) => {
   
@@ -63,9 +63,9 @@ export const AddStudy = ({casestudy}) => {
   }
 
   const addPhoto = () => {
-    console.log(form.title.split(' ').join(''))
+    console.log(form.titleSmall.split(' ').join(''))
     setElements(prev => prev.concat([
-        <FileInput name={form.title.split(' ').join('')} returnSuccess={handlePhotoReturn}/>
+        <FileUpload name={form.titleSmall.split(' ').join('')} returnSuccess={handlePhotoReturn}/>
     ])) 
   }
 
@@ -87,7 +87,6 @@ export const AddStudy = ({casestudy}) => {
     }
     setTimeout(() => {
       hashInp.current.value = ''
-      //setForm({...form, hashtags: hashes}) 
     },100)
   }
 
@@ -136,8 +135,6 @@ export const AddStudy = ({casestudy}) => {
   }
 
   const handleDeleteHash = (i) => {
-    // const newHashes = hashes
-    // newHashes.splice(i,1)
     setHashes(hashes.filter((h,index) => index!==i))  
   }
 
@@ -226,7 +223,7 @@ export const AddStudy = ({casestudy}) => {
     if (text=='subtitle') array[index] = subtitle(index).subtitle
     if (text=='paragraph') array[index] = paragraph(index).paragraph
     console.log(text)
-    if (text=='photo') array[index] = <FileInput name={form.title.split(' ').join('')} returnSuccess={(name) => handlePhotoReturn2(name,index)}/>
+    if (text=='photo') array[index] = <FileUpload name={form.titleSmall.split(' ').join('')} returnSuccess={(name) => handlePhotoReturn2(name,index)}/>
     setAdditional([...array])
   } 
 
@@ -279,33 +276,9 @@ export const AddStudy = ({casestudy}) => {
                                                               placeholder="Paragraph" 
                                                               onChange={changeHandler}
                                                               ></textarea>}
-                    {elm.type == 'photo' && <CheckForImage source={elm.text}/>}
+                    {elm.type == 'photo' && <Files a={elm.text}/>}
                     {additional[i] && additional[i]} 
                    </div> )}
-          // if (elm.type == 'subtitle') return ( <div className={styles.inputCont}>
-          //                                           <input className={styles.input} 
-          //                                                 name="subtitle"
-          //                                                 type="text" 
-          //                                                 value = {elm.text}
-          //                                                 placeholder="Subtitle"
-          //                                                 onChange={changeHandler}/> 
-          //                                       </div> )
-          // if (elm.type == 'paragraph') return ( <div className={styles.inputCont}>
-          //                                           <textarea name="paragraph" 
-          //                                                     ref={textarea}
-          //                                                     value = {elm.text}
-          //                                                     className={styles.input} 
-          //                                                     placeholder="Paragraph" 
-          //                                                     onChange={changeHandler}
-          //                                                     ></textarea>
-          //                                       </div> )
-          // if (elm.type == 'photo') return ( <div className={styles.inputCont}>
-          //                                       <input type="file" 
-          //                                             name="photo"
-          //                                             value = {elm.text}
-          //                                             className={styles.input}
-          //                                             onChange={changeHandler}/>
-          //                                   </div> )
         })}
         </>}
         {!casestudy && <>

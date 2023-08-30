@@ -96,6 +96,10 @@
     border-radius: 0;
 }
 
+.titleInput::placeholder {
+    color: #00000075;
+}
+
 .input {
     outline: none;
     border: none;

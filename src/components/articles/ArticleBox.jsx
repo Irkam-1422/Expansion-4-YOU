@@ -12,7 +12,6 @@ export const ArticleBox = ({revert,article}) => {
                 </div>  
                 <div className={styles.imgCont}>
                 <img className={styles.img} src={require(`../../assets/channels.png`)} alt="" />
-                    {/* <img className={styles.img} src={require(`../../assets/${article.img}`)} alt="" /> */}
                 </div>
             </div>
     </Link>

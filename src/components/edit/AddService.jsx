@@ -2,33 +2,25 @@ import React, {useState, useEffect} from 'react'
 import styles from '../../styles/Edit.module.css'
 import { useHttp } from '../../hooks/http.hook'
 import { useNavigate } from 'react-router-dom'
-import { FileInput } from '../FileInput'
 import { CheckForImg } from './CheckForImg'
 
 export const AddService = ({length}) => {
   
   const {loading, request, error, clearError} = useHttp()  
   const navigate = useNavigate()
-  const [titleValue,setTitleValue] = useState(null)
 
   useEffect(() => {
     console.log(length)
   },[length])
 
   const handleChange = (e) => {
-    //console.log(e.target.name)
     if (e.target.name == 'title') {
         setForm({...form, [e.target.name]: e.target.value})
     } else {
         const nums = e.target.name.split('-')
         let newBody = form.body
         newBody[nums[0]].content[nums[1]][nums[2]] = e.target.value
-        //console.log('newBody:',newBody[nums[0]].content[nums[1]][nums[2]])
         setForm({...form, body: newBody})
-
-        // setTimeout(() => {
-        //     console.log('form.body:',form.body[nums[0]].content[nums[1]][nums[2]]);
-        // },100)
     }
   }
 
@@ -92,11 +84,6 @@ export const AddService = ({length}) => {
         const data = await request('/api/content/add-service', 'POST', {page,form,titles}) 
         if (data) navigate('/edit-content')
     },100)
-  }
-
-  const handlePhotoReturn = (name) => {
-    console.log(name)
-    //setForm({...form, body: form.body.concat({type: 'photo', text: name})}) 
   }
 
   return (

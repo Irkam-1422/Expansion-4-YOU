@@ -10,13 +10,31 @@ export const Header = ({returnReverted, returnFeedback, content}) => {
   const fadeInAnime = useRef(null);  
   const [scroll, setScroll] = useState(0);
 
+  const [fileData, setFileData] = useState('')   
+
+  const fetchFileData = async (filename) => {
+        try {
+            const response = await fetch(`/api/file/get/${filename}`);
+            const arrayBuffer = await response.arrayBuffer(); 
+            const base64String = btoa(
+                new Uint8Array(arrayBuffer).reduce(
+                    (data, byte) => data + String.fromCharCode(byte),
+                    ''
+                )
+            ); 
+        const str = `data:video/mp4;base64,${base64String}`
+        setFileData(str)
+        } catch (error) {
+            console.error('Error fetching file data:', error);
+        }
+  };
+
   const height = window.innerHeight 
 
   const handleScroll = () => {
     setScroll(window.scrollY);
     const revert = document.getElementById('revert')
     const feedback = document.getElementById('feedback')
-    const fbCont = document.getElementById('fbCont')
     const footer = document.getElementById('footer')
 
     console.log(window.scrollY)
@@ -114,12 +132,14 @@ export const Header = ({returnReverted, returnFeedback, content}) => {
         ] 
     }) 
 
+    fetchFileData('video5.mp4')
+
   },[])
 
   return (
     <div className='container'>
         <video   
-               src={require('../../assets/video5.mp4')} 
+               src={fileData} 
                type="video/mp4"
                muted  
                autoPlay="autoplay"   

@@ -18,6 +18,7 @@ import { EditContent } from './components/edit/EditContent'
 import { EditNav } from './components/edit/EditNav'
 import { LogIn } from './components/edit/LogIn'
 import { EmailTester } from './components/EmailTester'
+import { FileTest } from './components/FileTest'
 import { HowWeWork } from './components/HowWeWork'
 import { Main } from './components/Main'
 import { Navigation } from './components/Navigation'
@@ -131,6 +132,8 @@ export const useRoutes = (isAuthentificated) => {
             {/* <Route path='/' element={<Navigate to='/:main' replace/>} />  */}  
 
             <Route path='/emailtester' element={<EmailTester/>}/> 
+
+            <Route path='/filetest' element={<FileTest/>}/> 
 
         </Routes>
         </> 

@@ -47,8 +47,6 @@ export const YourCaseStudies = () => {
   return ( 
     <div className={styles.allArticlesCont}>
       <h1 className={styles.allArticlesH1}>All CaseStudies:</h1>
-      {/* background: linear-gradient(45deg, #de30e41f, #61dafb29);
-    padding: 1% 5%; */}
       <div 
       className={styles.lightBoxCont}
       >

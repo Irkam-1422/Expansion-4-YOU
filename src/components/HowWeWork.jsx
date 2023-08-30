@@ -91,9 +91,30 @@ export const HowWeWork = ({page}) => {
   const other = useRef(null) 
   const [heigh,setHeight] = useState(window.innerHeight*4)
   const [steps,setSteps] = useState([])
+
+  const [fileData, setFileData] = useState('')   
+
+  const fetchFileData = async (filename) => {
+        try {
+            const response = await fetch(`/api/file/get/${filename}`);
+            const arrayBuffer = await response.arrayBuffer(); 
+            const base64String = btoa(
+                new Uint8Array(arrayBuffer).reduce(
+                    (data, byte) => data + String.fromCharCode(byte),
+                    ''
+                )
+            ); 
+        const str = `data:video/mp4;base64,${base64String}`
+        setFileData(str)
+        } catch (error) {
+            console.error('Error fetching file data:', error);
+        }
+  };
   
   useEffect(() => {
     window.scrollTo(0, 0)
+
+    fetchFileData('water2.mp4')
   },[])
 
   useEffect(() => {
@@ -103,12 +124,6 @@ export const HowWeWork = ({page}) => {
     })
     setSteps(stps)
 
-  // window.addEventListener("scroll", handleScroll);
-  //  const footer = document.getElementById('footer')
-  //  if (footer) footer.style.display = 'flex'
-
-  //  console.log(getCoords(cont.current).bottom);
-  //  if (cont.current) setHeight(getCoords(cont.current).top)
   },[]) 
 
   const getCoords = (elem) => {
@@ -127,7 +142,7 @@ export const HowWeWork = ({page}) => {
       <div className={styles.header}>
         <video className={styles.video} 
                style={{height: `${window.innerHeight*5}px`}}
-               src={require('../assets/water2.mp4')}  
+               src={fileData}  
                type="video/mp4"
                muted  
                autoPlay="autoplay"   
@@ -137,7 +152,6 @@ export const HowWeWork = ({page}) => {
           <div className={styles.btns}>
             <Link to={`/articles/:${page.article}`} className={styles.btn}>
               {page.article.split('-').map((a,i) => i!==4 ? `${a} ` : <><br />{a} </>)}
-              {/* Why do YOU need <br /> digital marketing */}
             </Link>
             <Link to={'/contact'} className={styles.btn}>Contact Us</Link>
             <Link to={'/articles'} className={styles.btn}>Articles</Link>

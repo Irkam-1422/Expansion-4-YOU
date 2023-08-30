@@ -1,8 +1,7 @@
-import React, {useState,useRef,useEffect} from 'react'
+import React, {useRef,useEffect} from 'react'
 import styles from '../../styles/Main.module.css'
 import animStyles from '../../styles/Animation.module.css'
 import { About } from './About'
-import { Contact } from '../services/Contact'
 import {observer} from '../../observers.js'
 import { ContactImgBtn } from '../contact/ContactImgBtn'
 
@@ -18,7 +17,6 @@ export const Welcoming = ({reverted,content,aboutContent}) => {
 
   useEffect(() => { 
     let elements = [title1.current,title2.current]
-    let elements2 = [text1.current,text2.current]
     let elements3 = [digital.current,marketing.current]
     for (let elm of elements) {
       if (elm) observer(`${animStyles.hiddenLeft}`).observe(elm);
@@ -32,7 +30,6 @@ export const Welcoming = ({reverted,content,aboutContent}) => {
   return (
     <>
     <div className={`${styles.welcomingCont} container`} id='revert' style={window.innerHeight>window.innerWidth?{height: 'auto'}:{}}>
-        {/* transform: rotate(-90deg) translate(-33vh, -82vw); */}
         <div className={styles.welcomingSubcont} style={{width: '35%', paddingTop: '5vh'}}>
           <div className={`${styles.title1} ${animStyles.hiddenLeft} ${styles.titlePink}`} 
               ref={title1}
